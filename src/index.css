@@ -64,6 +64,22 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #B92536;
   }
+
+  @media (pointer: fine) {
+    body.has-custom-cursor,
+    body.has-custom-cursor a,
+    body.has-custom-cursor button,
+    body.has-custom-cursor [role="button"],
+    body.has-custom-cursor [data-cursor] {
+      cursor: none;
+    }
+
+    .cursor-ring[data-hovering="true"] {
+      border-color: #FF7A85;
+      background-color: rgba(255, 77, 90, 0.12);
+      box-shadow: 0 0 24px rgba(255, 77, 90, 0.45);
+    }
+  }
 }
 
 @layer components {
