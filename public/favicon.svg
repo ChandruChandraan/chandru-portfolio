@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Tactical Real-Time Command System Spec Colors -->
+    <!-- Primary: #FF4D5A | Secondary: #C8CDD5 | Tertiary: #B92536 | Neutral: #08090C -->
+    
+    <!-- Primary to Tertiary Gradient -->
+    <linearGradient id="tacticalPrimary" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF4D5A" />
+      <stop offset="60%" stop-color="#E03042" />
+      <stop offset="100%" stop-color="#B92536" />
+    </linearGradient>
+
+    <!-- Secondary Metallic Silver to Slate Gradient -->
+    <linearGradient id="tacticalSecondary" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="45%" stop-color="#C8CDD5" />
+      <stop offset="100%" stop-color="#8E96A4" />
+    </linearGradient>
+
+    <!-- Deep Tertiary Shadow Gradient -->
+    <linearGradient id="tacticalTertiary" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6E0F1C" />
+      <stop offset="50%" stop-color="#8F1524" />
+      <stop offset="100%" stop-color="#B92536" />
+    </linearGradient>
+
+    <!-- Soft Primary Tint Highlight (#FFCCD1 from spec board) -->
+    <linearGradient id="tintCore" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="40%" stop-color="#FFCCD1" />
+      <stop offset="100%" stop-color="#FF4D5A" />
+    </linearGradient>
+
+    <!-- Vibrant Primary Bloom Filter -->
+    <filter id="bloom" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#FF4D5A" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <!-- Neutral #08090C Tactical Dark Base -->
+  <rect width="512" height="512" rx="124" fill="#08090C" />
+  
+  <!-- Outer Accent Frame: Primary #FF4D5A with Secondary #C8CDD5 subtle glow -->
+  <rect width="498" height="498" x="7" y="7" rx="118" fill="none" stroke="#FF4D5A" stroke-width="8" stroke-opacity="0.65" />
+  <rect width="480" height="480" x="16" y="16" rx="110" fill="none" stroke="#C8CDD5" stroke-width="1.5" stroke-opacity="0.25" />
+
+  <!-- Corner Tactical Targeting Reticles (Secondary #C8CDD5) -->
+  <path d="M 46 86 L 46 46 L 86 46" fill="none" stroke="#C8CDD5" stroke-width="3.5" stroke-linecap="round" opacity="0.6" />
+  <path d="M 466 86 L 466 46 L 426 46" fill="none" stroke="#C8CDD5" stroke-width="3.5" stroke-linecap="round" opacity="0.6" />
+  <path d="M 46 426 L 46 466 L 86 466" fill="none" stroke="#C8CDD5" stroke-width="3.5" stroke-linecap="round" opacity="0.6" />
+  <path d="M 466 426 L 466 466 L 426 466" fill="none" stroke="#C8CDD5" stroke-width="3.5" stroke-linecap="round" opacity="0.6" />
+
+  <!-- Center 3D Spatial Tactical Monogram -->
+  <g filter="url(#bloom)">
+    <!-- Main Primary Wing (#FF4D5A -> #B92536) -->
+    <path d="M 256 76 L 400 158 L 400 228 L 256 146 L 164 198 L 164 314 L 256 366 L 348 314 L 348 252 L 400 252 L 400 354 L 256 436 L 112 354 L 112 158 Z" 
+          fill="url(#tacticalPrimary)" />
+
+    <!-- Secondary (#C8CDD5) Top Bevel Highlight Facet -->
+    <path d="M 112 158 L 256 76 L 256 146 L 164 198 L 112 158 Z" 
+          fill="url(#tacticalSecondary)" opacity="0.85" />
+
+    <!-- Tertiary (#B92536) Deep Shading Bottom Facet -->
+    <path d="M 112 354 L 256 436 L 256 366 L 164 314 L 112 354 Z" 
+          fill="url(#tacticalTertiary)" />
+
+    <!-- Central Spatial Floating Core (Unreal Engine Apex) -->
+    <!-- Outer Core Diamond in Secondary Silver #C8CDD5 -->
+    <polygon points="256,186 318,256 256,326 194,256" fill="url(#tacticalSecondary)" />
+    <!-- Inner Core Diamond in Primary Tint #FFCCD1 -> #FF4D5A -->
+    <polygon points="256,198 306,256 256,314 206,256" fill="url(#tintCore)" />
+    <!-- Center Radiant White-Hot Spark -->
+    <polygon points="256,224 284,256 256,288 228,256" fill="#FFFFFF" />
+
+    <!-- Horizontal Telemetry Axis Marks (#C8CDD5) -->
+    <line x1="-76" y1="0" x2="-48" y2="0" stroke="#C8CDD5" stroke-width="4.5" stroke-linecap="round" opacity="0.85" transform="translate(256, 256)" />
+    <line x1="48" y1="0" x2="76" y2="0" stroke="#C8CDD5" stroke-width="4.5" stroke-linecap="round" opacity="0.85" transform="translate(256, 256)" />
+  </g>
+</svg>

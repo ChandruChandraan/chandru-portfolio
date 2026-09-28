@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #08090C;
+  --color-coal: #0D0F14;
+  --color-card: #12141A;
+  --color-cardhot: #1A1D26;
+  --color-paper: #F4F4EF;
+  --color-fog: #C8CDD5;
+  --color-ash: #70706B;
+  --color-amber: #FF4D5A;
+  --color-flare: #FF7A85;
+  --color-rust: #B92536;
+
+  --font-display: "Space Grotesk", "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  html,
+  body {
+    overflow-x: clip;
+    background-color: #08090C;
+  }
+
+  body {
+    @apply bg-ink text-paper font-display antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: #FF4D5A;
+    color: #08090C;
+  }
+
+  :focus-visible {
+    outline: 2px solid #FF7A85;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #08090C;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1A1D26;
+    border: 2px solid #08090C;
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #B92536;
+  }
+}
+
+@layer components {
+  /* Layout shell — content capped for ultrawide, canvas may bleed full viewport */
+  .wrap {
+    @apply mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12;
+  }
+
+  .section-pad {
+    @apply py-24 sm:py-32 lg:py-36;
+  }
+
+  .eyebrow {
+    @apply font-mono text-[11px] tracking-[0.3em] text-fog uppercase;
+  }
+
+  /* Outlined display type */
+  .font-outline {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(244, 244, 239, 0.42);
+  }
+  .font-outline-amber {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255, 77, 90, 0.75);
+  }
+  .font-outline-faint {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(244, 244, 239, 0.14);
+  }
+
+  /* Tactical Dot Grid backdrop */
+  .tech-grid {
+    background-image: radial-gradient(rgba(200, 205, 213, 0.12) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .grain {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.86);
+  }
+}
+
+@keyframes blink-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes scroll-cue {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  45% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  55% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes shimmer-pan {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@layer utilities {
+  .animate-pulse-soft {
+    animation: pulse-soft 2.2s ease-in-out infinite;
+  }
+  .animate-blink {
+    animation: blink-dot 1.6s steps(1) infinite;
+  }
+  .animate-scroll-cue {
+    animation: scroll-cue 2.1s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+  .animate-float-slow {
+    animation: float-slow 7s ease-in-out infinite;
+  }
+
+  .skeleton {
+    background: linear-gradient(
+      100deg,
+      #101010 30%,
+      #181818 45%,
+      #101010 60%
+    );
+    background-size: 200% 100%;
+    animation: shimmer-pan 1.8s linear infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse-soft,
+  .animate-blink,
+  .animate-scroll-cue,
+  .animate-float-slow,
+  .skeleton {
+    animation: none !important;
+  }
+}
