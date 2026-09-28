@@ -1,79 +1,76 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
   <defs>
-    <!-- Tactical Real-Time Command System Spec Colors -->
-    <!-- Primary: #FF4D5A | Secondary: #C8CDD5 | Tertiary: #B92536 | Neutral: #08090C -->
+    <!-- Tactical Real-Time Command System Theme Gradients -->
+    <!-- Primary: #FF4D5A | Flare: #FF7A85 | Tertiary: #B92536 | Tint: #FFCCD1 | Neutral: #08090C -->
     
-    <!-- Primary to Tertiary Gradient -->
-    <linearGradient id="tacticalPrimary" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FF4D5A" />
-      <stop offset="60%" stop-color="#E03042" />
+    <!-- Primary Outer C Gradient (Flare -> Primary -> Tertiary) -->
+    <linearGradient id="primaryColorGrad" x1="15%" y1="10%" x2="85%" y2="90%">
+      <stop offset="0%" stop-color="#FF7A85" />
+      <stop offset="45%" stop-color="#FF4D5A" />
       <stop offset="100%" stop-color="#B92536" />
     </linearGradient>
 
-    <!-- Secondary Metallic Silver to Slate Gradient -->
-    <linearGradient id="tacticalSecondary" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFFFFF" />
-      <stop offset="45%" stop-color="#C8CDD5" />
-      <stop offset="100%" stop-color="#8E96A4" />
+    <!-- Inner C Interlocking Gradient (Tint -> Primary -> Deep Crimson) -->
+    <linearGradient id="accentColorGrad" x1="10%" y1="0%" x2="90%" y2="100%">
+      <stop offset="0%" stop-color="#FFCCD1" />
+      <stop offset="40%" stop-color="#FF4D5A" />
+      <stop offset="100%" stop-color="#9E1222" />
     </linearGradient>
 
-    <!-- Deep Tertiary Shadow Gradient -->
-    <linearGradient id="tacticalTertiary" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#6E0F1C" />
-      <stop offset="50%" stop-color="#8F1524" />
+    <!-- Central Unreal Engine Diamond Core (Radiant Spark) -->
+    <linearGradient id="coreDiamondGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="35%" stop-color="#FFCCD1" />
+      <stop offset="75%" stop-color="#FF4D5A" />
       <stop offset="100%" stop-color="#B92536" />
     </linearGradient>
 
-    <!-- Soft Primary Tint Highlight (#FFCCD1 from spec board) -->
-    <linearGradient id="tintCore" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#FFFFFF" />
-      <stop offset="40%" stop-color="#FFCCD1" />
-      <stop offset="100%" stop-color="#FF4D5A" />
-    </linearGradient>
-
-    <!-- Vibrant Primary Bloom Filter -->
-    <filter id="bloom" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#FF4D5A" flood-opacity="0.5" />
+    <!-- Tactical Crimson Bloom Filter -->
+    <filter id="tacticalBloom" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="14" flood-color="#FF4D5A" flood-opacity="0.65" />
+      <feDropShadow dx="0" dy="0" stdDeviation="28" flood-color="#FF4D5A" flood-opacity="0.3" />
     </filter>
   </defs>
 
-  <!-- Neutral #08090C Tactical Dark Base -->
-  <rect width="512" height="512" rx="124" fill="#08090C" />
+  <!-- Neutral #08090C Tactical Dark Obsidian Base -->
+  <rect width="512" height="512" rx="116" fill="#08090C" />
   
-  <!-- Outer Accent Frame: Primary #FF4D5A with Secondary #C8CDD5 subtle glow -->
-  <rect width="498" height="498" x="7" y="7" rx="118" fill="none" stroke="#FF4D5A" stroke-width="8" stroke-opacity="0.65" />
-  <rect width="480" height="480" x="16" y="16" rx="110" fill="none" stroke="#C8CDD5" stroke-width="1.5" stroke-opacity="0.25" />
+  <!-- Outer Accent Neon Border in Signature Primary #FF4D5A -->
+  <rect width="496" height="496" x="8" y="8" rx="110" fill="none" stroke="#FF4D5A" stroke-width="5" stroke-opacity="0.5" />
+  <rect width="480" height="480" x="16" y="16" rx="102" fill="none" stroke="#C8CDD5" stroke-width="1.5" stroke-opacity="0.18" />
 
-  <!-- Corner Tactical Targeting Reticles (Secondary #C8CDD5) -->
-  <path d="M 46 86 L 46 46 L 86 46" fill="none" stroke="#C8CDD5" stroke-width="3.5" stroke-linecap="round" opacity="0.6" />
-  <path d="M 466 86 L 466 46 L 426 46" fill="none" stroke="#C8CDD5" stroke-width="3.5" stroke-linecap="round" opacity="0.6" />
-  <path d="M 46 426 L 46 466 L 86 466" fill="none" stroke="#C8CDD5" stroke-width="3.5" stroke-linecap="round" opacity="0.6" />
-  <path d="M 466 426 L 466 466 L 426 466" fill="none" stroke="#C8CDD5" stroke-width="3.5" stroke-linecap="round" opacity="0.6" />
+  <!-- Corner Tactical HUD Reticles (#FF4D5A) -->
+  <path d="M 44 80 L 44 44 L 80 44" fill="none" stroke="#FF4D5A" stroke-width="3.5" stroke-linecap="round" opacity="0.8" />
+  <path d="M 468 80 L 468 44 L 432 44" fill="none" stroke="#FF4D5A" stroke-width="3.5" stroke-linecap="round" opacity="0.8" />
+  <path d="M 44 432 L 44 468 L 80 468" fill="none" stroke="#FF4D5A" stroke-width="3.5" stroke-linecap="round" opacity="0.8" />
+  <path d="M 468 432 L 468 468 L 432 468" fill="none" stroke="#FF4D5A" stroke-width="3.5" stroke-linecap="round" opacity="0.8" />
 
-  <!-- Center 3D Spatial Tactical Monogram -->
-  <g filter="url(#bloom)">
-    <!-- Main Primary Wing (#FF4D5A -> #B92536) -->
-    <path d="M 256 76 L 400 158 L 400 228 L 256 146 L 164 198 L 164 314 L 256 366 L 348 314 L 348 252 L 400 252 L 400 354 L 256 436 L 112 354 L 112 158 Z" 
-          fill="url(#tacticalPrimary)" />
+  <!-- Geometric CC Monogram & Unreal Engine Spatial Apex Emblem -->
+  <g filter="url(#tacticalBloom)">
+    <!-- Primary Outer C Arc (Chandru - Bold #FF4D5A Spectrum) -->
+    <path d="M 332 148 C 300 126 262 116 220 116 C 142 116 80 178 80 256 C 80 334 142 396 220 396 C 262 396 300 386 332 364" 
+          fill="none" 
+          stroke="url(#primaryColorGrad)" 
+          stroke-width="50" 
+          stroke-linecap="round" />
 
-    <!-- Secondary (#C8CDD5) Top Bevel Highlight Facet -->
-    <path d="M 112 158 L 256 76 L 256 146 L 164 198 L 112 158 Z" 
-          fill="url(#tacticalSecondary)" opacity="0.85" />
+    <!-- Inner Interlocking C Arc (Chandran - Radiant Prism) -->
+    <path d="M 432 196 C 408 182 376 174 342 174 C 296 174 258 210 258 256 C 258 302 296 338 342 338 C 376 338 408 330 432 316" 
+          fill="none" 
+          stroke="url(#accentColorGrad)" 
+          stroke-width="38" 
+          stroke-linecap="round" />
 
-    <!-- Tertiary (#B92536) Deep Shading Bottom Facet -->
-    <path d="M 112 354 L 256 436 L 256 366 L 164 314 L 112 354 Z" 
-          fill="url(#tacticalTertiary)" />
+    <!-- Central Unreal Engine 3D Apex Node -->
+    <!-- Outer Deep Shadow Diamond -->
+    <polygon points="256,212 294,256 256,300 218,256" fill="#B92536" opacity="0.8" />
+    <!-- Vibrant Radiant Diamond -->
+    <polygon points="256,216 290,256 256,296 222,256" fill="url(#coreDiamondGrad)" />
+    <!-- Center Radiant Spark -->
+    <polygon points="256,236 272,256 256,276 240,256" fill="#FFFFFF" />
 
-    <!-- Central Spatial Floating Core (Unreal Engine Apex) -->
-    <!-- Outer Core Diamond in Secondary Silver #C8CDD5 -->
-    <polygon points="256,186 318,256 256,326 194,256" fill="url(#tacticalSecondary)" />
-    <!-- Inner Core Diamond in Primary Tint #FFCCD1 -> #FF4D5A -->
-    <polygon points="256,198 306,256 256,314 206,256" fill="url(#tintCore)" />
-    <!-- Center Radiant White-Hot Spark -->
-    <polygon points="256,224 284,256 256,288 228,256" fill="#FFFFFF" />
-
-    <!-- Horizontal Telemetry Axis Marks (#C8CDD5) -->
-    <line x1="-76" y1="0" x2="-48" y2="0" stroke="#C8CDD5" stroke-width="4.5" stroke-linecap="round" opacity="0.85" transform="translate(256, 256)" />
-    <line x1="48" y1="0" x2="76" y2="0" stroke="#C8CDD5" stroke-width="4.5" stroke-linecap="round" opacity="0.85" transform="translate(256, 256)" />
+    <!-- Horizontal Telemetry Crosshair Ticks -->
+    <line x1="184" y1="256" x2="204" y2="256" stroke="#FFCCD1" stroke-width="4" stroke-linecap="round" opacity="0.85" />
+    <line x1="308" y1="256" x2="328" y2="256" stroke="#FFCCD1" stroke-width="4" stroke-linecap="round" opacity="0.85" />
   </g>
 </svg>
