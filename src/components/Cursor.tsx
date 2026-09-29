@@ -5,6 +5,7 @@ import { useMediaQuery, useReducedMotion } from "../lib/hooks";
  * Fluid Minimalist Dot & Lagging Aura Ring cursor.
  * Matches universal primary theme (#FF4D5A / #FF7A85).
  * Fine pointer devices only with full reduced motion support.
+ * High z-index (99999) to ensure visibility above all modals and overlays.
  */
 export default function Cursor() {
   const fine = useMediaQuery("(pointer: fine)");
@@ -27,6 +28,7 @@ export default function Cursor() {
     let hovering = false;
     let isDown = false;
     let visible = false;
+    let inNativeZone = false;
     let currentRingScale = 1;
     let currentDotScale = 1;
     let raf = 0;
@@ -34,16 +36,35 @@ export default function Cursor() {
     const onMove = (e: MouseEvent) => {
       x = e.clientX;
       y = e.clientY;
-      if (!visible) {
-        visible = true;
-        rx = x;
-        ry = y;
+
+      const target = e.target as HTMLElement | null;
+      const wantsNative = !!target?.closest("[data-native-cursor], .pdf-viewer, iframe");
+
+      if (wantsNative !== inNativeZone) {
+        inNativeZone = wantsNative;
+      }
+
+      if (inNativeZone) {
+        dot.style.opacity = "0";
+        ring.style.opacity = "0";
+      } else {
+        if (!visible) {
+          visible = true;
+          rx = x;
+          ry = y;
+        }
         dot.style.opacity = "1";
         ring.style.opacity = "1";
       }
     };
 
     const checkHover = (target: HTMLElement | null) => {
+      if (inNativeZone) {
+        hovering = false;
+        ring.setAttribute("data-hovering", "false");
+        return;
+      }
+
       const isInteractive = !!target?.closest(
         "a, button, [role='button'], [data-cursor], summary, input, select, textarea, label, .cursor-pointer"
       );
@@ -74,9 +95,11 @@ export default function Cursor() {
     };
 
     const onEnter = () => {
-      visible = true;
-      dot.style.opacity = "1";
-      ring.style.opacity = "1";
+      if (!inNativeZone) {
+        visible = true;
+        dot.style.opacity = "1";
+        ring.style.opacity = "1";
+      }
     };
 
     const loop = () => {
@@ -137,19 +160,19 @@ export default function Cursor() {
 
   return (
     <>
-      {/* Precision Core Dot (#FF4D5A with neon coral glow) */}
+      {/* Precision Core Dot (#FF4D5A with neon coral glow) — Highest z-index */}
       <div
         ref={dotRef}
         aria-hidden="true"
-        className="pointer-events-none fixed left-0 top-0 z-[95] size-[6px] rounded-full bg-amber shadow-[0_0_8px_rgba(255,77,90,0.85)] opacity-0 transition-opacity duration-300 will-change-transform"
+        className="pointer-events-none fixed left-0 top-0 z-[99999] size-[6px] rounded-full bg-amber shadow-[0_0_8px_rgba(255,77,90,0.85)] opacity-0 transition-opacity duration-200 will-change-transform"
       />
 
-      {/* Fluid Lagging Aura Ring */}
+      {/* Fluid Lagging Aura Ring — Highest z-index */}
       <div
         ref={ringRef}
         aria-hidden="true"
         data-hovering="false"
-        className="cursor-ring pointer-events-none fixed left-0 top-0 z-[95] size-[38px] rounded-full border border-amber/40 bg-amber/[0.04] shadow-[0_0_16px_-2px_rgba(255,77,90,0.3)] backdrop-blur-[0.5px] opacity-0 transition-[border-color,background-color,box-shadow,opacity] duration-300 will-change-transform data-[hovering=true]:border-flare data-[hovering=true]:bg-amber/[0.12] data-[hovering=true]:shadow-[0_0_24px_rgba(255,77,90,0.45)]"
+        className="cursor-ring pointer-events-none fixed left-0 top-0 z-[99999] size-[38px] rounded-full border border-amber/40 bg-amber/[0.04] shadow-[0_0_16px_-2px_rgba(255,77,90,0.3)] backdrop-blur-[0.5px] opacity-0 transition-[border-color,background-color,box-shadow,opacity] duration-200 will-change-transform data-[hovering=true]:border-flare data-[hovering=true]:bg-amber/[0.12] data-[hovering=true]:shadow-[0_0_24px_rgba(255,77,90,0.45)]"
       />
     </>
   );

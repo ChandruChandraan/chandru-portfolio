@@ -74,6 +74,15 @@
       cursor: none;
     }
 
+    /* Restore native cursor inside PDF preview frame and document viewer areas */
+    body.has-custom-cursor iframe,
+    body.has-custom-cursor .pdf-viewer,
+    body.has-custom-cursor .pdf-viewer *,
+    body.has-custom-cursor [data-native-cursor],
+    body.has-custom-cursor [data-native-cursor] * {
+      cursor: auto !important;
+    }
+
     .cursor-ring[data-hovering="true"] {
       border-color: #FF7A85;
       background-color: rgba(255, 77, 90, 0.12);
