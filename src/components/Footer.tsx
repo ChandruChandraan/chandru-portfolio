@@ -1,4 +1,4 @@
-import { ArrowUp, MapPin } from "lucide-react";
+import { ArrowUp, MapPin, FileText } from "lucide-react";
 import { personal } from "../data/content";
 import { GithubIcon, LinkedinIcon } from "./icons";
 
@@ -20,6 +20,15 @@ export default function Footer() {
             <MapPin className="size-3.5 text-amber/70" />
             {personal.location.toUpperCase()}
           </span>
+          <a
+            href={personal.resumeHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View Resume PDF"
+            className="grid size-10 place-items-center rounded-full border border-white/12 text-fog transition-colors duration-300 hover:border-amber/60 hover:text-amber"
+          >
+            <FileText className="size-4" />
+          </a>
           <a
             href={personal.linkedinHref}
             target="_blank"

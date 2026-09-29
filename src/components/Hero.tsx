@@ -1,5 +1,5 @@
 import { lazy, Suspense, useLayoutEffect, useRef } from "react";
-import { ArrowDownRight, Boxes } from "lucide-react";
+import { ArrowDownRight, Boxes, FileText } from "lucide-react";
 import { personal } from "../data/content";
 import { gsap } from "../lib/gsap";
 import { useOnScreen, useReducedMotion, useWebGLSupport, useMediaQuery } from "../lib/hooks";
@@ -212,6 +212,18 @@ export default function Hero() {
               >
                 <Boxes className="size-4 text-amber transition-transform duration-500 group-hover:rotate-12" />
                 EXPLORE UNREAL ENGINE
+              </a>
+            </Magnetic>
+            <Magnetic strength={0.22}>
+              <a
+                href={personal.resumeHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-hero="cta"
+                className="group inline-flex items-center gap-2.5 rounded-full border border-white/15 px-7 py-4 text-[12px] font-semibold tracking-[0.14em] text-paper transition-colors duration-300 hover:border-amber/60 hover:text-amber"
+              >
+                <FileText className="size-4 text-amber transition-transform duration-300 group-hover:scale-110" />
+                RESUME (PDF)
               </a>
             </Magnetic>
           </div>

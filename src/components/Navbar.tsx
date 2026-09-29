@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Menu, X, ArrowUpRight, Phone, Mail } from "lucide-react";
+import { Menu, X, ArrowUpRight, Phone, Mail, FileText } from "lucide-react";
 import { nav, personal } from "../data/content";
 import { gsap } from "../lib/gsap";
 import Magnetic from "./Magnetic";
@@ -120,6 +120,17 @@ export default function Navbar() {
 
           {/* right — CTA + menu */}
           <div className="flex items-center gap-2">
+            <Magnetic className="hidden md:block" strength={0.22}>
+              <a
+                href={personal.resumeHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-1.5 rounded-xl border border-white/12 px-3.5 py-2.5 text-[11px] font-semibold tracking-[0.14em] text-fog transition-colors duration-300 hover:border-amber/50 hover:text-amber"
+              >
+                <FileText className="size-3.5 text-amber" />
+                RESUME
+              </a>
+            </Magnetic>
             <Magnetic className="hidden sm:block" strength={0.22}>
               <a
                 href="#contact"
@@ -184,6 +195,14 @@ export default function Navbar() {
               open ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
             }`}
           >
+            <a
+              href={personal.resumeHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 rounded-full border border-amber/40 bg-amber/10 px-4 py-2.5 font-mono text-[11px] text-amber"
+            >
+              <FileText className="size-3.5 text-amber" /> RESUME (PDF)
+            </a>
             <a
               href={personal.phoneHref}
               className="flex items-center gap-2 rounded-full border border-white/12 px-4 py-2.5 font-mono text-[11px] text-fog"

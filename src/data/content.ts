@@ -21,6 +21,8 @@ export const personal = {
   linkedinHref: "https://www.linkedin.com/in/chandru-chandran-b46b312aa/",
   portfolioLabel: "chandruchandraan.github.io/chandru-portfolio",
   portfolioHref: "https://chandruchandraan.github.io/chandru-portfolio/",
+  resumeLabel: "Chandru_Chandran.pdf",
+  resumeHref: "./Chandru_Chandran.pdf",
   heroIntro:
     "Game and VR Developer specializing in real-time 3D development, immersive applications, simulation systems, and interactive experiences.",
   summary: [
@@ -416,17 +418,18 @@ export const technicalExpertise = [
     ],
   },
   {
-    category: "Programming & Development",
+    category: "Programming & Languages",
     skills: [
       "Python",
       "Dart",
+      "C++ (Intermediate)",
       "Flutter",
       "Application Scripting",
       "Technical Prototyping",
     ],
   },
   {
-    category: "Embedded Systems",
+    category: "Embedded & Hardware",
     skills: [
       "ESP32",
       "Arduino",
@@ -436,7 +439,7 @@ export const technicalExpertise = [
     ],
   },
   {
-    category: "Other Specialized Areas",
+    category: "Systems & Specialized Domains",
     skills: [
       "Networking",
       "Performance Optimization",
@@ -444,8 +447,15 @@ export const technicalExpertise = [
       "Medical Visualization",
       "Architectural Visualization",
       "Interactive Kiosks",
+      "GitHub & Version Control",
     ],
   },
+];
+
+export const softSkills = [
+  "Technical Problem Solving",
+  "Cross-Domain Collaboration",
+  "Adaptability across Software, Embedded Systems & 3D Media",
 ];
 
 export const skills = {
@@ -460,6 +470,7 @@ export const skills = {
   additional: [
     "Python",
     "Dart",
+    "C++",
     "Flutter",
     "ESP32",
     "Arduino",
@@ -486,7 +497,7 @@ export const skillNodes: SkillNode[] = [
   { label: "Flutter & Dart", x: 50, y: 5, tier: "outer" },
   { label: "Camera Integration", x: 92, y: 50, tier: "outer" },
   { label: "ESP32 & Arduino", x: 50, y: 97, tier: "outer" },
-  { label: "Python", x: 8, y: 50, tier: "outer" },
+  { label: "Python & C++", x: 8, y: 50, tier: "outer" },
 ];
 
 export const skillLinks: Array<{
@@ -512,14 +523,15 @@ export const education = [
     year: "2020",
     title: "DIPLOMA IN MECHANICAL ENGINEERING",
     institution: "Erode Institute of Technology",
+    note: "Completed — 2020",
     status: "COMPLETED",
     current: false,
   },
   {
     year: "2025 — PRESENT",
     title: "BACHELOR OF COMPUTER APPLICATIONS (BCA)",
-    institution: "Computer Applications",
-    note: "BCA · COMPUTER APPLICATIONS",
+    institution: "Amrita Vishwa Vidyapeetham",
+    note: "Expected Graduation: 2028",
     status: "PRESENT",
     current: true,
   },
