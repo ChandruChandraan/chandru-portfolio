@@ -8,9 +8,8 @@ export const personal = {
   firstName: "CHANDRU",
   lastName: "CHANDRAN",
   title: "Game Developer | VR Developer",
-  roles: ["GAME DEVELOPER", "VR DEVELOPER", "SIMULATION ENGINEER"],
+  roles: ["GAME DEVELOPER", "VR DEVELOPER"],
   location: "Chennai, India",
-  nativePlace: "Dharmapuri, Tamil Nadu, India",
   phone: "8270773803",
   phoneHref: "tel:8270773803",
   email: "chandruchandran0712@gmail.com",
@@ -21,22 +20,23 @@ export const personal = {
   linkedinHref: "https://www.linkedin.com/in/chandru-chandran-b46b312aa/",
   portfolioLabel: "chandruchandraan.github.io/chandru-portfolio",
   portfolioHref: "https://chandruchandraan.github.io/chandru-portfolio/",
-  resumeLabel: "Chandru_Chandran.pdf",
-  resumeHref: "./Chandru_Chandran.pdf",
+  resumeLabel: "Download Resume",
+  resumeHref: "./Chandru_Chandran_Resume.pdf",
+  cvLabel: "Download CV",
+  cvHref: "./Chandru_Chandran_CV.pdf",
   heroIntro:
-    "Game and VR Developer specializing in real-time 3D development, immersive applications, simulation systems, and interactive experiences.",
+    "Game and VR Developer specializing in real-time 3D development, immersive applications, VR simulation, visualization, and interactive experiences.",
   summary: [
-    "I am a Game and VR Developer specializing in real-time 3D development, immersive applications, simulation systems, and interactive experiences. My work focuses on building engaging PC and VR applications using Unreal Engine, Blueprint development, VR interaction design, level design, and real-time systems.",
-    "I have hands-on experience working across VR simulations, architectural visualization, medical visualization, interactive applications, embedded systems, and real-time 3D software. I enjoy transforming technical concepts into interactive and visually engaging digital experiences.",
-    "My professional work includes VR simulation, architectural visualization, medical visualization, interactive kiosks, camera-integrated applications, and real-time 3D environments. I work primarily with Unreal Engine and Blueprint-based development, while also having experience with Python, Dart, Flutter, embedded systems, ESP32, Arduino, and networking.",
+    "I am a Game and VR Developer specializing in real-time 3D development, immersive applications, VR simulation, visualization, and interactive experiences. I have professional experience working with Unreal Engine, Blueprint development, VR interaction design, level design, networking, performance optimization, and real-time 3D systems.",
+    "My experience includes VR simulation, architectural visualization, medical visualization, interactive applications, camera-integrated systems, and embedded-device integration. I enjoy transforming technical concepts into interactive and immersive digital experiences.",
   ],
-  primaryFocus: ["UNREAL ENGINE", "VR / XR DEVELOPMENT", "REAL-TIME SIMULATION"],
+  primaryFocus: ["UNREAL ENGINE", "VR / XR DEVELOPMENT", "REAL-TIME 3D & SIMULATION"],
 };
 
 export const whatIDo = [
   {
     title: "Game Development",
-    desc: "Building interactive real-time 3D experiences, gameplay systems, environments, and simulations.",
+    desc: "Building interactive real-time 3D experiences, gameplay systems, environments, and simulations using Unreal Engine.",
     tag: "UNREAL // BLUEPRINTS",
   },
   {
@@ -46,26 +46,15 @@ export const whatIDo = [
   },
   {
     title: "3D Visualization",
-    desc: "Developing architectural, medical, anatomical, and simulation-focused 3D visualization applications.",
+    desc: "Developing architectural, medical, anatomical, and simulation-focused 3D visualization applications with real-time fidelity.",
     tag: "ARCHVIZ // MEDICAL",
   },
   {
     title: "Interactive Applications",
-    desc: "Developing real-time applications, interactive kiosks, camera-integrated systems, and specialized visualization solutions.",
+    desc: "Developing real-time applications, interactive kiosks, camera-integrated systems, and specialized hardware-software solutions.",
     tag: "KIOSKS // EMBEDDED",
   },
 ];
-
-export const careerFocus = {
-  statement:
-    "I am looking to continue developing my career in Game Development, VR/XR Development, Real-Time 3D, Simulation, and Interactive Visualization, where I can apply my technical skills to create practical and immersive digital experiences.",
-  targetRoles: [
-    "GAME DEVELOPER",
-    "VR / XR DEVELOPER",
-    "REAL-TIME 3D ENGINEER",
-    "SIMULATION DEVELOPER",
-  ],
-};
 
 export const nav = [
   { id: "home", label: "HOME", short: "HOME" },
@@ -83,58 +72,49 @@ export const experience = {
   period: "2022 — PRESENT",
   role: "GAME / VR DEVELOPER",
   company: "DEO VERSE",
+  location: "Chennai, India",
   tagline:
     "At Deo Verse, I work on real-time 3D, VR, simulation, visualization, and interactive application development.",
   items: [
     {
-      id: "2.01",
+      id: "2.1",
       title: "VR SIMULATION & PHYSICS CONTROLS",
-      desc: "Develop VR simulation experiences with physics-based controls and real-time feedback.",
+      desc: "Developed VR simulation experiences with physics-based controls and real-time feedback using Unreal Engine and Blueprint workflows.",
     },
     {
-      id: "2.02",
+      id: "2.2",
       title: "ARCHITECTURAL VISUALIZATION",
-      desc: "Build architectural visualization applications for PC and VR platforms with dynamic lighting and interactive navigation.",
+      desc: "Built architectural visualization applications for PC and VR platforms.",
     },
     {
-      id: "2.03",
-      title: "INTERACTIVE 3D & GAMEPLAY SYSTEMS",
-      desc: "Develop interactive 3D environments and gameplay systems using Unreal Engine and Blueprint development.",
+      id: "2.3",
+      title: "GAMEPLAY & VR INTERACTION SYSTEMS",
+      desc: "Implemented gameplay and VR interaction systems.",
     },
     {
-      id: "2.04",
-      title: "VR INTERACTION SYSTEMS",
-      desc: "Implement VR interaction systems, spatial user experiences, and responsive real-time mechanics.",
+      id: "2.4",
+      title: "SELFIE BOOTH & INTERACTIVE KIOSKS",
+      desc: "Created camera-integrated selfie booth and interactive kiosk applications.",
     },
     {
-      id: "2.05",
-      title: "CAMERA APPLICATIONS & KIOSK SYSTEMS",
-      desc: "Create camera-integrated applications and interactive kiosk systems for events and specialized environments.",
+      id: "2.5",
+      title: "REAL-TIME 3D & LEVEL DESIGN",
+      desc: "Developed real-time 3D environments and level-design workflows.",
     },
     {
-      id: "2.06",
-      title: "LEVEL DESIGN & 3D ENVIRONMENTS",
-      desc: "Work on level design, blockouts, spatial composition, and real-time 3D environment development.",
-    },
-    {
-      id: "2.07",
-      title: "MEDICAL VISUALIZATION & SIMULATION",
-      desc: "Contribute to medical visualization and simulation applications, including DICOM viewing and 3D anatomical models.",
-    },
-    {
-      id: "2.08",
+      id: "2.6",
       title: "PERFORMANCE OPTIMIZATION",
-      desc: "Work on performance optimization for interactive real-time applications to ensure stable high-framerate rendering.",
+      desc: "Worked on performance optimization for real-time applications.",
     },
     {
-      id: "2.09",
-      title: "HARDWARE & DEVICE INTEGRATION",
-      desc: "Develop and integrate systems across software, VR headsets, embedded devices (ESP32, Arduino), and interactive media.",
+      id: "2.7",
+      title: "MEDICAL & ANATOMY VISUALIZATION",
+      desc: "Contributed to medical visualization and anatomy-focused interactive 3D applications.",
     },
     {
-      id: "2.10",
-      title: "IMMERSIVE TECH COLLABORATION",
-      desc: "Collaborate on professional applications involving visualization, simulation, and real-time immersive technology.",
+      id: "2.8",
+      title: "PROFESSIONAL PRODUCT SUITE",
+      desc: "Worked across professional applications including Deo Vision – DICOM Viewer, D-Tiler, DeoVerse Simulator, Dhaksha, Anatomy, and Deo + Med + Defence.",
     },
   ],
 };
@@ -154,50 +134,49 @@ export type Project = {
 export const projects: Project[] = [
   {
     n: "01",
-    title: "DEO VISION // DICOM VIEWER",
+    title: "DEO VISION – DICOM VIEWER",
     tag: "VR // MEDICAL 3D VOLUMETRIC RECONSTRUCTION",
-    desc: "A medical visualization application focused on viewing and interacting with DICOM medical imaging data in real-time VR. Enables volumetric CT scan inspection, multi-planar reconstruction (axial, coronal, sagittal), and spatial analysis.",
+    desc: "Medical visualization application focused on viewing and interacting with DICOM medical imaging data.",
     stack: [
       "UNREAL ENGINE",
       "DICOM 3D DATA",
       "VR MEDICAL",
-      "MULTI-PLANAR SLICING",
+      "VOLUMETRIC RECONSTRUCTION",
       "REAL-TIME SHADERS",
     ],
     image: "images/mediscan-dicom-viewer.jpg",
-    imageAlt:
-      "MediScan VR Pro v4.2 interface displaying 3D thoracic bone volume reconstruction with axial, coronal, and sagittal CT views",
+    imageAlt: "Deo Vision DICOM Viewer real-time 3D medical volume reconstruction",
     videoId: "HNVgJfvbqTQ",
     sub: "MEDICAL VISUALIZATION APPLICATION",
   },
   {
     n: "02",
-    title: "D-TILER // DIGITAL TILING SOFTWARE",
+    title: "D-TILER",
     tag: "VISUALIZATION // APPLICATION PORTFOLIO",
-    desc: "A visualization-focused application developed as part of the Deo Verse professional application portfolio for real-time surface material layout and interactive architectural tiling.",
+    desc: "Visualization-focused application developed within the Deo Verse professional application portfolio.",
     stack: [
       "UNREAL ENGINE",
+      "VISUALIZATION",
       "MATERIAL SYSTEMS",
-      "ARCHVIZ",
       "INTERACTIVE UI",
-      "REAL-TIME RENDERING",
+      "REAL-TIME 3D",
     ],
     image: "images/d-tiler-software.jpg",
-    imageAlt: "D-Tiler interactive digital surface and tile visualization tool",
+    imageAlt: "D-Tiler visualization application",
     videoId: "61bBNSW0eBQ",
     sub: "VISUALIZATION APPLICATION",
   },
   {
     n: "03",
     title: "DEOVERSE SIMULATOR",
-    tag: "SIMULATION // REAL-TIME 3D & INTERACTION",
-    desc: "A simulation application involving real-time 3D environments, interaction design, and immersive experiences developed within the Deo Verse professional environment.",
+    tag: "SIMULATION // REAL-TIME 3D & IMMERSIVE",
+    desc: "Simulation application involving real-time 3D environments, interaction, and immersive experiences.",
     stack: [
       "UNREAL ENGINE",
       "SIMULATION SYSTEMS",
       "REAL-TIME 3D",
+      "VR INTERACTION",
       "PHYSICS MECHANICS",
-      "BLUEPRINTS",
     ],
     image: "images/dhaksha-drone-sim.jpg",
     imageAlt: "DeoVerse Simulator real-time 3D simulation environment",
@@ -206,113 +185,54 @@ export const projects: Project[] = [
   },
   {
     n: "04",
-    title: "ANATOMY // VR ARTERIAL & SURGICAL",
-    tag: "VR // MEDICAL & ANATOMICAL VISUALIZATION",
-    desc: "A medical and anatomical visualization application focused on interactive 3D visualization. Features spatial examination of the cardiovascular and arterial systems with real-time hemodynamic telemetry.",
-    stack: [
-      "UNREAL ENGINE",
-      "VR ANATOMY",
-      "BIOMETRIC HUD",
-      "SPATIAL INTERACTION",
-      "MEDICAL 3D",
-    ],
-    image: "images/vr-anatomy-surgery.jpg",
-    imageAlt:
-      "Surgeon in VR headset interacting with illuminated orange holographic human body and arterial telemetry HUD",
-    videoId: "7YMj3YfP8BI",
-    sub: "MEDICAL & ANATOMICAL VISUALIZATION",
-  },
-  {
-    n: "05",
-    title: "DEO + MED + DEFENCE",
-    tag: "DEFENCE // REAL-TIME FIELD MEDICINE",
-    desc: "A professional application and workstream combining real-time visualization and interactive technology for specialized trauma care, physiological vitals telemetry, and triage HUD intervention.",
-    stack: [
-      "REAL-TIME SIMULATION",
-      "TACTICAL TELEMETRY",
-      "TRIAGE HUD",
-      "UNREAL BLUEPRINTS",
-      "DEFENCE TECH",
-    ],
-    image: "images/combat-medic-defence.jpg",
-    imageAlt:
-      "Combat medic in tactical uniform treating casualty with glowing orange holographic patient vitals HUD",
-    videoId: "HyKbepj3pls",
-    sub: "SPECIALIZED INTERACTIVE WORKSTREAM",
-  },
-  {
-    n: "06",
-    title: "DHAKSHA // DRONE SIMULATOR",
-    tag: "VR // PHYSICS-DRIVEN FLIGHT SIMULATION",
-    desc: "An interactive technology application developed within the Deo Verse professional environment featuring physics-driven flight controls, telemetry feedback, and responsive flight simulation.",
+    title: "DHAKSHA",
+    tag: "INTERACTIVE TECH // PROFESSIONAL APPLICATION",
+    desc: "Interactive technology application developed within the Deo Verse professional environment.",
     stack: [
       "UNREAL ENGINE",
       "PHYSICS CONTROLS",
       "VR SIMULATION",
-      "TELEMETRY HUD",
-      "DRONE SYSTEMS",
+      "REAL-TIME INTERACTION",
+      "BLUEPRINTS",
     ],
     image: "images/dhaksha-drone-sim.jpg",
-    imageAlt: "Dhaksha industrial drone simulator flight telemetry",
+    imageAlt: "Dhaksha interactive technology application",
     videoId: "d3XJoURtweA",
     sub: "INTERACTIVE TECHNOLOGY APPLICATION",
   },
   {
-    n: "07",
-    title: "DAC DEVELOPERS ARCHITECTURAL WALKTHROUGH",
-    tag: "ARCHVIZ // PC & VR INTERACTIVE WALKTHROUGH",
-    desc: "Photorealistic real-time architectural visualization application for luxury penthouses. Built with Unreal Engine dynamic lighting, interactive floor viewpoint navigation, and PC/VR deployment.",
+    n: "05",
+    title: "ANATOMY",
+    tag: "VR // MEDICAL & ANATOMICAL VISUALIZATION",
+    desc: "Medical and anatomical visualization application focused on interactive 3D visualization.",
     stack: [
       "UNREAL ENGINE",
-      "LUMEN & NANITE",
-      "ARCHITECTURAL VISUALIZATION",
-      "VR TELEPORT SYSTEM",
-      "PC & VR",
+      "VR ANATOMY",
+      "MEDICAL VISUALIZATION",
+      "BIOMETRIC HUD",
+      "SPATIAL INTERACTION",
     ],
-    image: "images/dac-architectural-walkthrough.jpg",
-    imageAlt:
-      "Modern luxury penthouse at night overlooking city skyline with interactive navigational teleportation markers",
-    videoId: "QMjHcGO7C_Q",
-    sub: "PC & VR ARCHITECTURAL WALKTHROUGH",
+    image: "images/vr-anatomy-surgery.jpg",
+    imageAlt: "Anatomy interactive 3D medical visualization",
+    videoId: "7YMj3YfP8BI",
+    sub: "MEDICAL & ANATOMICAL VISUALIZATION",
   },
   {
-    n: "08",
-    title: "SELFIE BOOTH APPLICATION",
-    tag: "KIOSK // REAL-TIME CAMERA INTEGRATION",
-    desc: "Designed and engineered a real-time camera-integrated interactive kiosk system for event environments with automated capture, custom filter overlays, and physical-digital triggers.",
+    n: "06",
+    title: "DEO + MED + DEFENCE",
+    tag: "SPECIALIZED WORKSTREAM // REAL-TIME TECH",
+    desc: "Professional application/workstream involving real-time visualization and interactive technology for specialized use cases.",
     stack: [
-      "INTERACTIVE KIOSK",
-      "CAMERA INTEGRATION",
-      "REAL-TIME UI",
-      "EVENT SYSTEMS",
-      "BLUEPRINTS",
+      "UNREAL ENGINE",
+      "REAL-TIME VISUALIZATION",
+      "SIMULATION",
+      "TRIAGE HUD",
+      "INTERACTIVE TECH",
     ],
-    image: "images/selfie-booth-kiosk.jpg",
-    imageAlt:
-      "Futuristic event selfie kiosk with an orange glowing ring light on a dark reflective floor",
-    sub: "CAMERA-INTEGRATED KIOSK SYSTEM",
-  },
-  {
-    n: "09",
-    title: "SMART HOME SYSTEM",
-    tag: "IoT // EMBEDDED & AUTOMATION",
-    desc: "Developed an IoT automation and telemetry system with ESP32 and Arduino micro-controllers, remote sensor monitoring, and real-time device control.",
-    stack: ["ESP32 / ARDUINO", "EMBEDDED SYSTEMS", "REMOTE MONITORING", "DEVICE INTEGRATION"],
-    image: "images/smart-home-automation.jpg",
-    imageAlt:
-      "Wireframe smart home blueprint with orange connection nodes above a dark technical grid",
-    sub: "EMBEDDED AUTOMATION SYSTEM",
-  },
-  {
-    n: "10",
-    title: "EXPENSES TRACKER",
-    tag: "MOBILE // APPLICATION DEVELOPMENT",
-    desc: "Built a responsive cross-platform mobile application using Flutter and Dart for personal finance tracking, budget telemetry, and expense categorization.",
-    stack: ["FLUTTER", "DART", "MOBILE APP", "DATA ANALYTICS"],
-    image: "images/expense-tracker-app.jpg",
-    imageAlt:
-      "Floating smartphone showing a dark finance dashboard with orange glowing charts",
-    sub: "MOBILE APPLICATION",
+    image: "images/combat-medic-defence.jpg",
+    imageAlt: "Deo + Med + Defence specialized real-time visualization workstream",
+    videoId: "HyKbepj3pls",
+    sub: "SPECIALIZED INTERACTIVE WORKSTREAM",
   },
 ];
 
@@ -327,12 +247,12 @@ export type WorkItem = {
   tall?: boolean;
 };
 
-/* YouTube titles verified via the official oEmbed API. */
+/* Verified project demo videos matching the 6 professional projects */
 export const selectedWork: WorkItem[] = [
   {
     n: "01",
-    title: "DEO VISION DICOM VIEWER",
-    sub: "MEDISCAN VR PRO",
+    title: "DEO VISION – DICOM VIEWER",
+    sub: "MEDICAL 3D VISUALIZATION",
     videoId: "HNVgJfvbqTQ",
     image: "images/mediscan-dicom-viewer.jpg",
     span: "md:col-span-2 lg:col-span-8",
@@ -341,7 +261,7 @@ export const selectedWork: WorkItem[] = [
   {
     n: "02",
     title: "D-TILER",
-    sub: "DIGITAL TILING SOFTWARE",
+    sub: "VISUALIZATION APPLICATION",
     videoId: "61bBNSW0eBQ",
     image: "images/d-tiler-software.jpg",
     span: "lg:col-span-4",
@@ -350,8 +270,8 @@ export const selectedWork: WorkItem[] = [
   },
   {
     n: "03",
-    title: "DHAKSHA",
-    sub: "DRONE SIMULATOR",
+    title: "DEOVERSE SIMULATOR",
+    sub: "REAL-TIME 3D SIMULATION",
     videoId: "d3XJoURtweA",
     image: "images/dhaksha-drone-sim.jpg",
     span: "lg:col-span-6",
@@ -360,7 +280,7 @@ export const selectedWork: WorkItem[] = [
   {
     n: "04",
     title: "ANATOMY",
-    sub: "VR ARTERIAL & SURGICAL SYSTEM",
+    sub: "VR ANATOMICAL VISUALIZATION",
     videoId: "7YMj3YfP8BI",
     image: "images/vr-anatomy-surgery.jpg",
     span: "lg:col-span-6",
@@ -369,7 +289,7 @@ export const selectedWork: WorkItem[] = [
   {
     n: "05",
     title: "DEO + MED + DEFENCE",
-    sub: "TACTICAL COMBAT MEDIC",
+    sub: "REAL-TIME VISUALIZATION & INTERACTION",
     videoId: "HyKbepj3pls",
     image: "images/combat-medic-defence.jpg",
     span: "md:col-span-2 lg:col-span-7",
@@ -377,104 +297,98 @@ export const selectedWork: WorkItem[] = [
   },
   {
     n: "06",
-    title: "D-CINEMA",
-    sub: "VIRTUAL CINEMA EXPERIENCE",
-    videoId: "02_cyWb3ghM",
-    image: "images/d-cinema-vr.jpg",
+    title: "DHAKSHA",
+    sub: "INTERACTIVE TECHNOLOGY",
+    videoId: "d3XJoURtweA",
+    image: "images/dhaksha-drone-sim.jpg",
     span: "lg:col-span-5",
     aspect: "aspect-[16/9]",
-  },
-  {
-    n: "07",
-    title: "DAC DEVELOPERS",
-    sub: "PC & VR WALKTHROUGH",
-    videoId: "QMjHcGO7C_Q",
-    image: "images/dac-architectural-walkthrough.jpg",
-    span: "md:col-span-2 lg:col-span-12",
-    aspect: "aspect-[16/9] lg:aspect-[21/8]",
   },
 ];
 
 export const technicalExpertise = [
   {
-    category: "Game & 3D Development",
+    category: "Game / 3D Development",
     skills: [
       "Unreal Engine",
       "Blueprint Development",
       "Gameplay Systems",
       "Level Design",
       "Real-Time 3D",
-      "Interactive Applications",
     ],
   },
   {
-    category: "VR / XR Development",
+    category: "VR / XR",
     skills: [
-      "VR Application Development",
+      "VR Development",
       "VR Interaction Design",
-      "OpenXR Workflows",
-      "Immersive Experiences",
+      "OpenXR",
       "VR Simulation",
+      "Immersive Applications",
     ],
   },
   {
-    category: "Programming & Languages",
+    category: "Programming",
     skills: [
       "Python",
       "Dart",
       "C++ (Intermediate)",
-      "Flutter",
       "Application Scripting",
       "Technical Prototyping",
     ],
   },
   {
-    category: "Embedded & Hardware",
+    category: "Applications",
+    skills: [
+      "Flutter",
+      "Web Applications",
+      "UI Integration",
+      "Camera-Based Systems",
+    ],
+  },
+  {
+    category: "Embedded",
     skills: [
       "ESP32",
       "Arduino",
       "Embedded Systems",
-      "Camera Integration",
-      "Device Integration",
+      "Camera and Device Integration",
     ],
   },
   {
-    category: "Systems & Specialized Domains",
+    category: "Other",
     skills: [
       "Networking",
       "Performance Optimization",
-      "Simulation Systems",
-      "Medical Visualization",
-      "Architectural Visualization",
-      "Interactive Kiosks",
-      "GitHub & Version Control",
+      "Simulation",
+      "Real-Time Interaction",
     ],
   },
-];
-
-export const softSkills = [
-  "Technical Problem Solving",
-  "Cross-Domain Collaboration",
-  "Adaptability across Software, Embedded Systems & 3D Media",
+  {
+    category: "Version Control",
+    skills: [
+      "GitHub",
+    ],
+  },
 ];
 
 export const skills = {
   primary: "UNREAL ENGINE",
   core: ["Blueprints", "Level Design", "VR Development"],
   supporting: [
-    "Real-Time Simulation",
-    "Interaction Systems",
-    "Performance Optimization",
-    "Networking",
+    "Real-Time 3D",
+    "VR Interaction Design",
+    "OpenXR",
+    "Simulation",
   ],
   additional: [
     "Python",
     "Dart",
-    "C++",
+    "C++ (Intermediate)",
     "Flutter",
     "ESP32",
     "Arduino",
-    "Camera Integration",
+    "GitHub",
   ],
 };
 
@@ -490,12 +404,12 @@ export const skillNodes: SkillNode[] = [
   { label: "Blueprints", x: 50, y: 21, tier: "core" },
   { label: "Level Design", x: 26, y: 64, tier: "core" },
   { label: "VR Development", x: 74, y: 64, tier: "core" },
-  { label: "Real-Time Simulation", x: 21, y: 24, tier: "secondary" },
-  { label: "Interaction Systems", x: 79, y: 24, tier: "secondary" },
+  { label: "Real-Time 3D", x: 21, y: 24, tier: "secondary" },
+  { label: "VR Interaction", x: 79, y: 24, tier: "secondary" },
   { label: "Performance Optimization", x: 20, y: 86, tier: "secondary" },
   { label: "Networking", x: 80, y: 86, tier: "secondary" },
   { label: "Flutter & Dart", x: 50, y: 5, tier: "outer" },
-  { label: "Camera Integration", x: 92, y: 50, tier: "outer" },
+  { label: "OpenXR", x: 92, y: 50, tier: "outer" },
   { label: "ESP32 & Arduino", x: 50, y: 97, tier: "outer" },
   { label: "Python & C++", x: 8, y: 50, tier: "outer" },
 ];
@@ -520,20 +434,20 @@ export const skillLinks: Array<{
 
 export const education = [
   {
-    year: "2020",
-    title: "DIPLOMA IN MECHANICAL ENGINEERING",
-    institution: "Erode Institute of Technology",
-    note: "Completed — 2020",
-    status: "COMPLETED",
-    current: false,
-  },
-  {
     year: "2025 — PRESENT",
     title: "BACHELOR OF COMPUTER APPLICATIONS (BCA)",
     institution: "Amrita Vishwa Vidyapeetham",
     note: "Expected Graduation: 2028",
     status: "PRESENT",
     current: true,
+  },
+  {
+    year: "2020",
+    title: "DIPLOMA IN MECHANICAL ENGINEERING",
+    institution: "Erode Institute of Technology",
+    note: "Completed: 2020",
+    status: "COMPLETED",
+    current: false,
   },
 ];
 

@@ -22,12 +22,26 @@ export default function Footer() {
           </span>
           <a
             href={personal.resumeHref}
+            download="Chandru_Chandran_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="View Resume PDF"
-            className="grid size-10 place-items-center rounded-full border border-white/12 text-fog transition-colors duration-300 hover:border-amber/60 hover:text-amber"
+            aria-label="Download Resume"
+            title="Download Resume"
+            className="flex items-center gap-1.5 rounded-full border border-white/12 px-3 py-1.5 font-mono text-[9.5px] tracking-[0.14em] text-fog transition-colors duration-300 hover:border-amber/60 hover:text-amber"
           >
-            <FileText className="size-4" />
+            <FileText className="size-3.5 text-amber" />
+            RESUME
+          </a>
+          <a
+            href={personal.cvHref}
+            download="Chandru_Chandran_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download CV"
+            title="Download CV"
+            className="flex items-center gap-1.5 rounded-full border border-white/12 px-3 py-1.5 font-mono text-[9.5px] tracking-[0.14em] text-fog transition-colors duration-300 hover:border-white/30 hover:text-paper"
+          >
+            CV
           </a>
           <a
             href={personal.linkedinHref}

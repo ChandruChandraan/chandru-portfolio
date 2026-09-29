@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { personal, whatIDo, careerFocus } from "../data/content";
+import { personal, whatIDo } from "../data/content";
 import { useReveals } from "../lib/anim";
 import { useReducedMotion } from "../lib/hooks";
 import SectionHeading from "./SectionHeading";
@@ -130,7 +130,7 @@ export default function About() {
               </h3>
             </div>
             <p data-reveal className="max-w-md font-mono text-[11px] tracking-[0.2em] text-ash">
-              BRIDGING TECHNICAL ARCHITECTURE AND REAL-TIME IMMERSION
+              UNREAL ENGINE · VR DEVELOPMENT · 3D VISUALIZATION · INTERACTIVE SYSTEMS
             </p>
           </div>
 
@@ -156,31 +156,6 @@ export default function About() {
                 </p>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* ---------------- CAREER FOCUS ---------------- */}
-        <div className="mt-14 rounded-2xl border border-amber/30 bg-gradient-to-r from-amber/10 via-card/80 to-transparent p-7 sm:p-9" data-reveal>
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-2xl">
-              <span className="inline-flex items-center gap-2 rounded-full border border-amber/40 bg-amber/15 px-3 py-1 font-mono text-[9.5px] tracking-[0.25em] text-amber">
-                <span className="size-1.5 rounded-full bg-amber animate-pulse-soft" />
-                CAREER FOCUS
-              </span>
-              <p className="mt-3.5 text-base sm:text-lg leading-relaxed text-paper">
-                {careerFocus.statement}
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-2 lg:max-w-xs">
-              {careerFocus.targetRoles.map((role) => (
-                <span
-                  key={role}
-                  className="rounded-full border border-white/12 bg-ink/60 px-3.5 py-1.5 font-mono text-[9.5px] tracking-[0.18em] text-fog"
-                >
-                  {role}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
       </div>

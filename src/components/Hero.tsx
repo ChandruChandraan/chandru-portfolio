@@ -196,11 +196,37 @@ export default function Hero() {
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <Magnetic>
               <a
-                href="#work"
+                href={personal.resumeHref}
+                download="Chandru_Chandran_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 data-hero="cta"
                 className="group inline-flex items-center gap-2.5 rounded-full bg-amber px-7 py-4 text-[12px] font-bold tracking-[0.14em] text-ink transition-colors duration-300 hover:bg-flare"
               >
-                VIEW SELECTED WORK
+                <FileText className="size-4" />
+                DOWNLOAD RESUME
+              </a>
+            </Magnetic>
+            <Magnetic strength={0.22}>
+              <a
+                href={personal.cvHref}
+                download="Chandru_Chandran_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-hero="cta"
+                className="group inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-white/5 px-7 py-4 text-[12px] font-semibold tracking-[0.14em] text-paper transition-colors duration-300 hover:border-amber/60 hover:text-amber"
+              >
+                <FileText className="size-4 text-amber transition-transform duration-300 group-hover:scale-110" />
+                DOWNLOAD CV
+              </a>
+            </Magnetic>
+            <Magnetic strength={0.22}>
+              <a
+                href="#work"
+                data-hero="cta"
+                className="group inline-flex items-center gap-2.5 rounded-full border border-white/15 px-7 py-4 text-[12px] font-semibold tracking-[0.14em] text-paper transition-colors duration-300 hover:border-amber/60 hover:text-amber"
+              >
+                VIEW PROJECTS
                 <ArrowDownRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
               </a>
             </Magnetic>
@@ -211,19 +237,7 @@ export default function Hero() {
                 className="group inline-flex items-center gap-2.5 rounded-full border border-white/15 px-7 py-4 text-[12px] font-semibold tracking-[0.14em] text-paper transition-colors duration-300 hover:border-amber/60 hover:text-amber"
               >
                 <Boxes className="size-4 text-amber transition-transform duration-500 group-hover:rotate-12" />
-                EXPLORE UNREAL ENGINE
-              </a>
-            </Magnetic>
-            <Magnetic strength={0.22}>
-              <a
-                href={personal.resumeHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-hero="cta"
-                className="group inline-flex items-center gap-2.5 rounded-full border border-white/15 px-7 py-4 text-[12px] font-semibold tracking-[0.14em] text-paper transition-colors duration-300 hover:border-amber/60 hover:text-amber"
-              >
-                <FileText className="size-4 text-amber transition-transform duration-300 group-hover:scale-110" />
-                RESUME (PDF)
+                UNREAL ENGINE
               </a>
             </Magnetic>
           </div>

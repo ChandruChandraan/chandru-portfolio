@@ -123,12 +123,24 @@ export default function Navbar() {
             <Magnetic className="hidden md:block" strength={0.22}>
               <a
                 href={personal.resumeHref}
+                download="Chandru_Chandran_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-1.5 rounded-xl border border-white/12 px-3.5 py-2.5 text-[11px] font-semibold tracking-[0.14em] text-fog transition-colors duration-300 hover:border-amber/50 hover:text-amber"
+                className="group flex items-center gap-1.5 rounded-xl border border-amber/40 bg-amber/10 px-3.5 py-2.5 text-[11px] font-bold tracking-[0.14em] text-amber transition-all duration-300 hover:border-amber hover:bg-amber hover:text-ink"
               >
-                <FileText className="size-3.5 text-amber" />
+                <FileText className="size-3.5" />
                 RESUME
+              </a>
+            </Magnetic>
+            <Magnetic className="hidden lg:block" strength={0.22}>
+              <a
+                href={personal.cvHref}
+                download="Chandru_Chandran_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-1.5 rounded-xl border border-white/12 px-3.5 py-2.5 text-[11px] font-semibold tracking-[0.14em] text-fog transition-colors duration-300 hover:border-white/30 hover:text-paper"
+              >
+                CV
               </a>
             </Magnetic>
             <Magnetic className="hidden sm:block" strength={0.22}>
@@ -197,11 +209,21 @@ export default function Navbar() {
           >
             <a
               href={personal.resumeHref}
+              download="Chandru_Chandran_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 rounded-full border border-amber/40 bg-amber/10 px-4 py-2.5 font-mono text-[11px] text-amber"
             >
-              <FileText className="size-3.5 text-amber" /> RESUME (PDF)
+              <FileText className="size-3.5 text-amber" /> DOWNLOAD RESUME
+            </a>
+            <a
+              href={personal.cvHref}
+              download="Chandru_Chandran_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 rounded-full border border-white/12 px-4 py-2.5 font-mono text-[11px] text-fog hover:text-paper"
+            >
+              <FileText className="size-3.5 text-ash" /> DOWNLOAD CV
             </a>
             <a
               href={personal.phoneHref}
