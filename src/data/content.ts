@@ -10,6 +10,7 @@ export const personal = {
   title: "Game Developer | VR Developer",
   roles: ["GAME DEVELOPER", "VR DEVELOPER"],
   location: "Chennai, India",
+  nativePlace: "Dharmapuri, Tamil Nadu, India",
   phone: "8270773803",
   phoneHref: "tel:8270773803",
   email: "chandruchandran0712@gmail.com",
