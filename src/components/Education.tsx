@@ -75,8 +75,14 @@ export default function Education() {
                   {entry.title}
                 </h3>
 
+                {'institution' in entry && entry.institution && (
+                  <p className="mt-2 text-sm font-semibold tracking-wide text-amber/90">
+                    {entry.institution}
+                  </p>
+                )}
+
                 {entry.note && (
-                  <p className="mt-2 font-mono text-[11px] tracking-[0.3em] text-ash">
+                  <p className="mt-1 font-mono text-[11px] tracking-[0.25em] text-ash">
                     {entry.note}
                   </p>
                 )}

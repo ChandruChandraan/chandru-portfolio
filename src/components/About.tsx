@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { personal } from "../data/content";
+import { personal, whatIDo, careerFocus } from "../data/content";
 import { useReveals } from "../lib/anim";
 import { useReducedMotion } from "../lib/hooks";
 import SectionHeading from "./SectionHeading";
@@ -114,6 +114,72 @@ export default function About() {
               <p data-reveal data-delay="0.2" className="mt-8 font-mono text-[10px] tracking-[0.25em] text-ash">
                 CHENNAI, INDIA <span className="text-amber/60">//</span> 13.08° N — 80.27° E
               </p>
+            </div>
+          </div>
+        </div>
+
+        {/* ---------------- WHAT I DO ---------------- */}
+        <div className="mt-20 pt-16 border-t border-white/8">
+          <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <p data-reveal className="mb-3 font-mono text-[10px] tracking-[0.3em] text-amber">
+                CORE DISCIPLINES
+              </p>
+              <h3 className="text-2xl font-bold tracking-tight sm:text-3xl text-paper">
+                WHAT I DO
+              </h3>
+            </div>
+            <p data-reveal className="max-w-md font-mono text-[11px] tracking-[0.2em] text-ash">
+              BRIDGING TECHNICAL ARCHITECTURE AND REAL-TIME IMMERSION
+            </p>
+          </div>
+
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4" data-stagger>
+            {whatIDo.map((item, i) => (
+              <div
+                key={item.title}
+                className="group relative rounded-2xl border border-white/8 bg-card/60 p-6 transition-all duration-300 hover:border-amber/40 hover:bg-cardhot"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-[10px] tracking-[0.2em] text-amber">
+                    0{i + 1}
+                  </span>
+                  <span className="rounded-full border border-white/10 px-2.5 py-1 font-mono text-[8.5px] tracking-[0.2em] text-ash transition-colors group-hover:border-amber/40 group-hover:text-amber">
+                    {item.tag}
+                  </span>
+                </div>
+                <h4 className="mt-5 text-lg font-bold tracking-wide text-paper transition-colors group-hover:text-amber">
+                  {item.title}
+                </h4>
+                <p className="mt-2.5 text-sm leading-relaxed text-fog">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ---------------- CAREER FOCUS ---------------- */}
+        <div className="mt-14 rounded-2xl border border-amber/30 bg-gradient-to-r from-amber/10 via-card/80 to-transparent p-7 sm:p-9" data-reveal>
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+            <div className="max-w-2xl">
+              <span className="inline-flex items-center gap-2 rounded-full border border-amber/40 bg-amber/15 px-3 py-1 font-mono text-[9.5px] tracking-[0.25em] text-amber">
+                <span className="size-1.5 rounded-full bg-amber animate-pulse-soft" />
+                CAREER FOCUS
+              </span>
+              <p className="mt-3.5 text-base sm:text-lg leading-relaxed text-paper">
+                {careerFocus.statement}
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2 lg:max-w-xs">
+              {careerFocus.targetRoles.map((role) => (
+                <span
+                  key={role}
+                  className="rounded-full border border-white/12 bg-ink/60 px-3.5 py-1.5 font-mono text-[9.5px] tracking-[0.18em] text-fog"
+                >
+                  {role}
+                </span>
+              ))}
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef } from "react";
 import { Boxes } from "lucide-react";
-import { skills, skillNodes, skillLinks } from "../data/content";
+import { skills, skillNodes, skillLinks, technicalExpertise } from "../data/content";
 import { gsap } from "../lib/gsap";
 import { useReveals } from "../lib/anim";
 import { useReducedMotion } from "../lib/hooks";
@@ -264,6 +264,53 @@ export default function Skills() {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+
+        {/* ---------------- categorized technical expertise matrix ---------------- */}
+        <div className="mt-20 pt-16 border-t border-white/8">
+          <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <p data-reveal className="mb-3 font-mono text-[10px] tracking-[0.3em] text-amber">
+                COMPREHENSIVE STACK
+              </p>
+              <h3 className="text-2xl font-bold tracking-tight sm:text-3xl text-paper">
+                TECHNICAL EXPERTISE
+              </h3>
+            </div>
+            <p data-reveal className="max-w-md font-mono text-[11px] tracking-[0.2em] text-ash">
+              DOMAINS // 3D · VR/XR · SCRIPTING · EMBEDDED · SYSTEMS
+            </p>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-stagger>
+            {technicalExpertise.map((cat, i) => (
+              <div
+                key={cat.category}
+                className="rounded-2xl border border-white/8 bg-card/60 p-6 transition-all duration-300 hover:border-amber/35 hover:bg-cardhot"
+              >
+                <div className="flex items-center justify-between border-b border-white/8 pb-4">
+                  <span className="font-mono text-[10px] tracking-[0.25em] text-amber">
+                    0{i + 1} // DOMAIN
+                  </span>
+                  <span className="size-1.5 rounded-full bg-amber/50" />
+                </div>
+                <h4 className="mt-4 text-base font-bold tracking-wide text-paper">
+                  {cat.category}
+                </h4>
+                <ul className="mt-4 space-y-2">
+                  {cat.skills.map((skill) => (
+                    <li
+                      key={skill}
+                      className="flex items-center gap-3 text-sm text-fog"
+                    >
+                      <span className="size-1 rounded-full bg-amber/60" />
+                      <span>{skill}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </div>

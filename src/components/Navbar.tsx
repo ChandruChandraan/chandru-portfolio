@@ -3,7 +3,7 @@ import { Menu, X, ArrowUpRight, Phone, Mail } from "lucide-react";
 import { nav, personal } from "../data/content";
 import { gsap } from "../lib/gsap";
 import Magnetic from "./Magnetic";
-import { GithubIcon } from "./icons";
+import { GithubIcon, LinkedinIcon } from "./icons";
 
 export default function Navbar() {
   const [active, setActive] = useState<string>("home");
@@ -195,6 +195,14 @@ export default function Navbar() {
               className="flex items-center gap-2 rounded-full border border-white/12 px-4 py-2.5 font-mono text-[11px] text-fog"
             >
               <Mail className="size-3.5 text-amber" /> EMAIL
+            </a>
+            <a
+              href={personal.linkedinHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 rounded-full border border-white/12 px-4 py-2.5 font-mono text-[11px] text-fog"
+            >
+              <LinkedinIcon className="size-3.5 text-amber" /> LINKEDIN
             </a>
             <a
               href={personal.githubHref}

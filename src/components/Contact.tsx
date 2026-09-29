@@ -5,7 +5,7 @@ import { useReveals } from "../lib/anim";
 import { useReducedMotion } from "../lib/hooks";
 import SectionHeading from "./SectionHeading";
 import Magnetic from "./Magnetic";
-import { GithubIcon } from "./icons";
+import { GithubIcon, LinkedinIcon } from "./icons";
 
 /**
  * 09 — CONTACT
@@ -133,6 +133,23 @@ export default function Contact() {
                 </span>
                 <ArrowUpRight className="size-5 shrink-0 text-ash transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-amber" />
               </a>
+
+              <a
+                href={personal.linkedinHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between gap-4 border-b border-white/8 py-5"
+              >
+                <span>
+                  <span className="block font-mono text-[9.5px] tracking-[0.28em] text-ash">
+                    LINKEDIN
+                  </span>
+                  <span className="mt-1 block text-base font-semibold text-paper transition-colors group-hover:text-amber sm:text-lg">
+                    {personal.linkedinLabel}
+                  </span>
+                </span>
+                <ArrowUpRight className="size-5 shrink-0 text-ash transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-amber" />
+              </a>
             </div>
 
             <div className="mt-10 flex flex-wrap gap-4" data-stagger>
@@ -152,6 +169,17 @@ export default function Contact() {
                 >
                   <Mail className="size-4 text-amber" />
                   EMAIL
+                </a>
+              </Magnetic>
+              <Magnetic strength={0.22}>
+                <a
+                  href={personal.linkedinHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 rounded-full border border-white/15 px-7 py-4 text-[12px] font-semibold tracking-[0.14em] text-paper transition-colors duration-300 hover:border-amber/60 hover:text-amber"
+                >
+                  <LinkedinIcon className="size-4 text-amber" />
+                  LINKEDIN
                 </a>
               </Magnetic>
               <Magnetic strength={0.22}>

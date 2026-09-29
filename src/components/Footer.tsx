@@ -1,6 +1,6 @@
 import { ArrowUp, MapPin } from "lucide-react";
 import { personal } from "../data/content";
-import { GithubIcon } from "./icons";
+import { GithubIcon, LinkedinIcon } from "./icons";
 
 export default function Footer() {
   return (
@@ -11,7 +11,7 @@ export default function Footer() {
             CHANDRU <span className="text-fog">CHANDRAN</span>
           </p>
           <p className="mt-1.5 font-mono text-[9.5px] tracking-[0.22em] text-ash">
-            GAME DEVELOPER | VR DEVELOPER | IoT ENGINEER
+            {personal.title.toUpperCase()}
           </p>
         </div>
 
@@ -20,6 +20,15 @@ export default function Footer() {
             <MapPin className="size-3.5 text-amber/70" />
             {personal.location.toUpperCase()}
           </span>
+          <a
+            href={personal.linkedinHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
+            className="grid size-10 place-items-center rounded-full border border-white/12 text-fog transition-colors duration-300 hover:border-amber/60 hover:text-amber"
+          >
+            <LinkedinIcon className="size-4" />
+          </a>
           <a
             href={personal.githubHref}
             target="_blank"

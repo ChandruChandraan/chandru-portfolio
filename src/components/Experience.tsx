@@ -52,8 +52,7 @@ export default function Experience() {
               </p>
 
               <p data-reveal data-delay="0.1" className="mt-6 max-w-sm text-sm leading-relaxed text-fog">
-                Real-time development across VR simulation, architectural
-                visualization, interactive kiosk systems and gameplay logic.
+                {experience.tagline}
               </p>
 
               <p data-reveal data-delay="0.15" className="mt-8 font-mono text-[10px] tracking-[0.3em] text-ash">
