@@ -31,11 +31,28 @@
   body {
     overflow-x: clip;
     background-color: #08090C;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 
   body {
     @apply bg-ink text-paper font-display antialiased;
     text-rendering: optimizeLegibility;
+  }
+
+  img {
+    -webkit-user-drag: none;
+    user-select: none;
+  }
+
+  input,
+  textarea,
+  [contenteditable="true"] {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    user-select: text;
   }
 
   ::selection {
