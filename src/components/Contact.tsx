@@ -6,6 +6,7 @@ import { useReducedMotion } from "../lib/hooks";
 import SectionHeading from "./SectionHeading";
 import Magnetic from "./Magnetic";
 import { GithubIcon, LinkedinIcon } from "./icons";
+import { useDocumentModal } from "../context/DocumentModalContext";
 
 /**
  * 09 — CONTACT
@@ -14,6 +15,7 @@ import { GithubIcon, LinkedinIcon } from "./icons";
 export default function Contact() {
   const ref = useRef<HTMLElement>(null);
   const reduced = useReducedMotion();
+  const { openDoc } = useDocumentModal();
   useReveals(ref, reduced);
 
   return (
@@ -151,67 +153,59 @@ export default function Contact() {
                 <ArrowUpRight className="size-5 shrink-0 text-ash transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-amber" />
               </a>
 
-              <a
-                href={personal.resumeHref}
-                download="Chandru_Chandran_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-between gap-4 border-b border-white/8 py-5"
+              <button
+                type="button"
+                onClick={() => openDoc("resume")}
+                className="group flex w-full items-center justify-between gap-4 border-b border-white/8 py-5 text-left"
               >
                 <span>
                   <span className="block font-mono text-[9.5px] tracking-[0.28em] text-ash">
-                    RESUME
+                    RESUME // PREVIEW INLINE
                   </span>
                   <span className="mt-1 block text-base font-semibold text-paper transition-colors group-hover:text-amber sm:text-lg">
                     Chandru_Chandran_Resume.pdf
                   </span>
                 </span>
                 <ArrowUpRight className="size-5 shrink-0 text-ash transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-amber" />
-              </a>
+              </button>
 
-              <a
-                href={personal.cvHref}
-                download="Chandru_Chandran_CV.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-between gap-4 border-b border-white/8 py-5"
+              <button
+                type="button"
+                onClick={() => openDoc("cv")}
+                className="group flex w-full items-center justify-between gap-4 border-b border-white/8 py-5 text-left"
               >
                 <span>
                   <span className="block font-mono text-[9.5px] tracking-[0.28em] text-ash">
-                    CURRICULUM VITAE (CV)
+                    CURRICULUM VITAE (CV) // PREVIEW INLINE
                   </span>
                   <span className="mt-1 block text-base font-semibold text-paper transition-colors group-hover:text-amber sm:text-lg">
                     Chandru_Chandran_CV.pdf
                   </span>
                 </span>
                 <ArrowUpRight className="size-5 shrink-0 text-ash transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-amber" />
-              </a>
+              </button>
             </div>
 
             <div className="mt-10 flex flex-wrap gap-4" data-stagger>
               <Magnetic>
-                <a
-                  href={personal.resumeHref}
-                  download="Chandru_Chandran_Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  type="button"
+                  onClick={() => openDoc("resume")}
                   className="inline-flex items-center gap-2.5 rounded-full bg-amber px-7 py-4 text-[12px] font-bold tracking-[0.14em] text-ink transition-colors duration-300 hover:bg-flare"
                 >
                   <FileText className="size-4" />
-                  DOWNLOAD RESUME
-                </a>
+                  PREVIEW RESUME
+                </button>
               </Magnetic>
               <Magnetic strength={0.22}>
-                <a
-                  href={personal.cvHref}
-                  download="Chandru_Chandran_CV.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  type="button"
+                  onClick={() => openDoc("cv")}
                   className="inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-white/5 px-7 py-4 text-[12px] font-semibold tracking-[0.14em] text-paper transition-colors duration-300 hover:border-amber/60 hover:text-amber"
                 >
                   <FileText className="size-4 text-amber" />
-                  DOWNLOAD CV
-                </a>
+                  PREVIEW CV
+                </button>
               </Magnetic>
               <Magnetic strength={0.22}>
                 <a

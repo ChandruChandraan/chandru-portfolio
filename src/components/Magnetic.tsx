@@ -34,10 +34,14 @@ export default function Magnetic({ children, className = "", strength = 0.28, st
     gsap.to(ref.current, { x: 0, y: 0, duration: 0.7, ease: "elastic.out(1, 0.45)" });
   };
 
+  const hasDisplay = /\b(hidden|block|inline-block|inline-flex|flex|grid|inline-grid)\b/.test(className);
+  const displayClass = hasDisplay ? "" : "inline-block";
+  const combinedClass = [displayClass, "will-change-transform", className].filter(Boolean).join(" ");
+
   return (
     <div
       ref={ref}
-      className={`inline-block will-change-transform ${className}`}
+      className={combinedClass}
       style={style}
       onMouseMove={onMove}
       onMouseLeave={onLeave}

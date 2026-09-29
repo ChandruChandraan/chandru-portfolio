@@ -7,10 +7,13 @@ import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Education from "./components/Education";
 import Languages from "./components/Languages";
+import ResumePreview from "./components/ResumePreview";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Cursor from "./components/Cursor";
 import ScrollProgress from "./components/ScrollProgress";
+import DocumentModal from "./components/DocumentModal";
+import { DocumentModalProvider } from "./context/DocumentModalContext";
 import { ScrollTrigger } from "./lib/gsap";
 
 const SelectedWork = lazy(() => import("./components/SelectedWork"));
@@ -42,35 +45,39 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative">
-      <ScrollProgress />
-      <Cursor />
-      <Navbar />
+    <DocumentModalProvider>
+      <div className="relative">
+        <ScrollProgress />
+        <Cursor />
+        <Navbar />
+        <DocumentModal />
 
-      <main>
-        <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <Suspense fallback={<SectionLoader label="LOADING // SELECTED WORK" />}>
-          <SelectedWork />
-        </Suspense>
-        <Suspense fallback={<SectionLoader label="LOADING // UNREAL ENGINE" />}>
-          <UnrealEngine />
-        </Suspense>
-        <Skills />
-        <Education />
-        <Languages />
-        <Contact />
-      </main>
+        <main>
+          <Hero />
+          <About />
+          <Experience />
+          <Projects />
+          <Suspense fallback={<SectionLoader label="LOADING // SELECTED WORK" />}>
+            <SelectedWork />
+          </Suspense>
+          <Suspense fallback={<SectionLoader label="LOADING // UNREAL ENGINE" />}>
+            <UnrealEngine />
+          </Suspense>
+          <Skills />
+          <Education />
+          <Languages />
+          <ResumePreview />
+          <Contact />
+        </main>
 
-      <Footer />
+        <Footer />
 
-      {/* film grain */}
-      <div
-        className="grain pointer-events-none fixed inset-0 z-[92] opacity-[0.05]"
-        aria-hidden="true"
-      />
-    </div>
+        {/* film grain */}
+        <div
+          className="grain pointer-events-none fixed inset-0 z-[92] opacity-[0.05]"
+          aria-hidden="true"
+        />
+      </div>
+    </DocumentModalProvider>
   );
 }

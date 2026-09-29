@@ -5,6 +5,7 @@ import { gsap } from "../lib/gsap";
 import { useOnScreen, useReducedMotion, useWebGLSupport, useMediaQuery } from "../lib/hooks";
 import SceneFallback from "../three/SceneFallback";
 import Magnetic from "./Magnetic";
+import { useDocumentModal } from "../context/DocumentModalContext";
 
 const HeroScene = lazy(() => import("../three/HeroScene"));
 
@@ -13,6 +14,7 @@ export default function Hero() {
   const webgl = useWebGLSupport();
   const low = useMediaQuery("(max-width: 820px)");
   const { ref: sectionRef, onScreen } = useOnScreen<HTMLElement>("120px");
+  const { openDoc } = useDocumentModal();
 
   const sceneWrapRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -195,30 +197,26 @@ export default function Hero() {
 
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <Magnetic>
-              <a
-                href={personal.resumeHref}
-                download="Chandru_Chandran_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={() => openDoc("resume")}
                 data-hero="cta"
                 className="group inline-flex items-center gap-2.5 rounded-full bg-amber px-7 py-4 text-[12px] font-bold tracking-[0.14em] text-ink transition-colors duration-300 hover:bg-flare"
               >
                 <FileText className="size-4" />
-                DOWNLOAD RESUME
-              </a>
+                PREVIEW RESUME
+              </button>
             </Magnetic>
             <Magnetic strength={0.22}>
-              <a
-                href={personal.cvHref}
-                download="Chandru_Chandran_CV.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={() => openDoc("cv")}
                 data-hero="cta"
                 className="group inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-white/5 px-7 py-4 text-[12px] font-semibold tracking-[0.14em] text-paper transition-colors duration-300 hover:border-amber/60 hover:text-amber"
               >
                 <FileText className="size-4 text-amber transition-transform duration-300 group-hover:scale-110" />
-                DOWNLOAD CV
-              </a>
+                PREVIEW CV
+              </button>
             </Magnetic>
             <Magnetic strength={0.22}>
               <a

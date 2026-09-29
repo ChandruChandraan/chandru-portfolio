@@ -1,8 +1,10 @@
 import { ArrowUp, MapPin, FileText } from "lucide-react";
 import { personal } from "../data/content";
 import { GithubIcon, LinkedinIcon } from "./icons";
+import { useDocumentModal } from "../context/DocumentModalContext";
 
 export default function Footer() {
+  const { openDoc } = useDocumentModal();
   return (
     <footer className="relative border-t border-white/8">
       <div className="wrap flex flex-col items-start justify-between gap-8 py-10 sm:flex-row sm:items-center">
@@ -20,29 +22,25 @@ export default function Footer() {
             <MapPin className="size-3.5 text-amber/70" />
             {personal.location.toUpperCase()}
           </span>
-          <a
-            href={personal.resumeHref}
-            download="Chandru_Chandran_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Download Resume"
-            title="Download Resume"
+          <button
+            type="button"
+            onClick={() => openDoc("resume")}
+            aria-label="Preview Resume"
+            title="Preview Resume"
             className="flex items-center gap-1.5 rounded-full border border-white/12 px-3 py-1.5 font-mono text-[9.5px] tracking-[0.14em] text-fog transition-colors duration-300 hover:border-amber/60 hover:text-amber"
           >
             <FileText className="size-3.5 text-amber" />
             RESUME
-          </a>
-          <a
-            href={personal.cvHref}
-            download="Chandru_Chandran_CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Download CV"
-            title="Download CV"
+          </button>
+          <button
+            type="button"
+            onClick={() => openDoc("cv")}
+            aria-label="Preview CV"
+            title="Preview CV"
             className="flex items-center gap-1.5 rounded-full border border-white/12 px-3 py-1.5 font-mono text-[9.5px] tracking-[0.14em] text-fog transition-colors duration-300 hover:border-white/30 hover:text-paper"
           >
             CV
-          </a>
+          </button>
           <a
             href={personal.linkedinHref}
             target="_blank"
