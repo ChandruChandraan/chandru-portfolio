@@ -1,6 +1,6 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { X } from "lucide-react";
+import { X, Play, Pause, VolumeX } from "lucide-react";
 import { gsap } from "../lib/gsap";
 import { useReducedMotion } from "../lib/hooks";
 
@@ -16,14 +16,19 @@ type Props = {
   onClose: () => void;
 };
 
-/** Cinematic lazy-loaded YouTube viewer. Portaled to <body>. */
+/** Cinematic lazy-loaded video viewer with clean viewport and zero platform watermarks. */
 export default function VideoModal({ video, onClose }: Props) {
   const reduced = useReducedMotion();
   const backdropRef = useRef<HTMLDivElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
   const closing = useRef(false);
   const previousFocus = useRef<Element | null>(null);
+
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [showIndicator, setShowIndicator] = useState(false);
+  const indicatorTimer = useRef<number | null>(null);
 
   useEffect(() => {
     previousFocus.current = document.activeElement;
@@ -50,11 +55,15 @@ export default function VideoModal({ video, onClose }: Props) {
     document.body.style.overflow = "hidden";
 
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") requestClose();
-      if (e.key === "Tab" && panelRef.current) {
+      if (e.key === "Escape") {
+        requestClose();
+      } else if (e.code === "Space" || e.key === "k" || e.key === "K") {
+        e.preventDefault();
+        togglePlay();
+      } else if (e.key === "Tab" && panelRef.current) {
         /* light focus trap */
         const focusables = panelRef.current.querySelectorAll<HTMLElement>(
-          "button, [href], iframe, [tabindex]:not([tabindex='-1'])"
+          "button, [href], [tabindex]:not([tabindex='-1'])"
         );
         if (!focusables.length) return;
         const first = focusables[0];
@@ -73,10 +82,39 @@ export default function VideoModal({ video, onClose }: Props) {
     return () => {
       document.body.style.overflow = "";
       window.removeEventListener("keydown", onKey);
+      if (indicatorTimer.current) window.clearTimeout(indicatorTimer.current);
       (previousFocus.current as HTMLElement | null)?.focus?.();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [isPlaying]);
+
+  const togglePlay = () => {
+    if (!iframeRef.current?.contentWindow) return;
+    const next = !isPlaying;
+    setIsPlaying(next);
+
+    // Send play/pause and keep muted
+    iframeRef.current.contentWindow.postMessage(
+      JSON.stringify({
+        event: "command",
+        func: next ? "playVideo" : "pauseVideo",
+        args: "",
+      }),
+      "*"
+    );
+    iframeRef.current.contentWindow.postMessage(
+      JSON.stringify({
+        event: "command",
+        func: "mute",
+        args: "",
+      }),
+      "*"
+    );
+
+    setShowIndicator(true);
+    if (indicatorTimer.current) window.clearTimeout(indicatorTimer.current);
+    indicatorTimer.current = window.setTimeout(() => setShowIndicator(false), 900);
+  };
 
   const requestClose = () => {
     if (closing.current) return;
@@ -89,6 +127,11 @@ export default function VideoModal({ video, onClose }: Props) {
       onComplete: onClose,
     });
   };
+
+  const originParam =
+    typeof window !== "undefined" && window.location.origin
+      ? `&origin=${encodeURIComponent(window.location.origin)}`
+      : "";
 
   return createPortal(
     <div
@@ -107,6 +150,7 @@ export default function VideoModal({ video, onClose }: Props) {
         ref={panelRef}
         className="relative w-full max-w-[1060px] overflow-hidden rounded-2xl border border-white/12 bg-coal shadow-[0_60px_140px_-30px_rgba(0,0,0,0.95)]"
       >
+        {/* Header */}
         <div className="flex items-center justify-between gap-4 border-b border-white/8 px-5 py-4 sm:px-7">
           <div className="flex min-w-0 items-baseline gap-4">
             <span className="font-mono text-xs text-amber">{video.n}</span>
@@ -130,23 +174,54 @@ export default function VideoModal({ video, onClose }: Props) {
           </button>
         </div>
 
-        <div className="relative aspect-video w-full bg-black">
+        {/* Clean Viewport with Overscan Crop & Click Shield */}
+        <div className="relative aspect-video w-full overflow-hidden bg-black select-none">
           <iframe
-            src={`https://www.youtube-nocookie.com/embed/${video.videoId}?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&disablekb=1&fs=0&iv_load_policy=3&playsinline=1`}
-            title={`${video.title} — YouTube video`}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-            className="absolute inset-0 h-full w-full border-0"
+            ref={iframeRef}
+            src={`https://www.youtube-nocookie.com/embed/${video.videoId}?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&disablekb=1&fs=0&iv_load_policy=3&playsinline=1&enablejsapi=1&cc_load_policy=0${originParam}`}
+            title={`${video.title} — video preview`}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            tabIndex={-1}
+            className="pointer-events-none absolute inset-0 h-full w-full scale-[1.32] origin-center border-0 select-none"
           />
+
+          {/* Interactive Click Shield: intercepts all hover & clicks to prevent YouTube overlays */}
+          <button
+            type="button"
+            onClick={togglePlay}
+            aria-label={isPlaying ? "Pause video" : "Play video"}
+            className="group/player absolute inset-0 z-10 flex items-center justify-center cursor-pointer bg-transparent focus:outline-none"
+          >
+            <div
+              className={`grid size-16 place-items-center rounded-full border border-amber/60 bg-ink/85 text-amber shadow-[0_0_35px_rgba(255,77,90,0.5)] backdrop-blur-md transition-all duration-300 ${
+                !isPlaying || showIndicator
+                  ? "scale-100 opacity-100"
+                  : "scale-75 opacity-0 group-hover/player:opacity-40 group-hover/player:scale-90"
+              }`}
+            >
+              {isPlaying ? (
+                <Pause className="size-6 fill-amber text-amber" />
+              ) : (
+                <Play className="ml-1 size-6 fill-amber text-amber" />
+              )}
+            </div>
+          </button>
         </div>
 
-        <div className="flex items-center justify-between gap-4 px-5 py-3.5 sm:px-7">
+        {/* Footer */}
+        <div className="flex items-center justify-between gap-4 px-5 py-3.5 sm:px-7 border-t border-white/6">
           <span className="font-mono text-[9.5px] tracking-[0.25em] text-ash">
             PROFESSIONAL WORK // DEO VERSE
           </span>
-          <span className="font-mono text-[9.5px] tracking-[0.25em] text-ash">
-            SRC // YOUTUBE
-          </span>
+          <div className="flex items-center gap-4">
+            <span className="flex items-center gap-1.5 font-mono text-[9.5px] tracking-[0.2em] text-amber">
+              <VolumeX className="size-3" />
+              MUTED
+            </span>
+            <span className="hidden font-mono text-[9.5px] tracking-[0.2em] text-fog/70 sm:inline">
+              CLICK VIDEO TO {isPlaying ? "PAUSE" : "PLAY"}
+            </span>
+          </div>
         </div>
       </div>
     </div>,
