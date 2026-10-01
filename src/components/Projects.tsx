@@ -160,9 +160,19 @@ export default function Projects() {
                   <div className="grid gap-8 pb-10 pl-0 sm:pl-[4.5rem] lg:grid-cols-2 lg:gap-12">
                     <div className="flex flex-col justify-between">
                       <div>
-                        <p className="max-w-md text-base leading-relaxed text-fog sm:text-lg">
+                        <p className="max-w-xl text-base leading-relaxed text-fog sm:text-lg">
                           {project.desc}
                         </p>
+                        {project.highlights && project.highlights.length > 0 && (
+                          <ul className="mt-5 space-y-2 max-w-xl">
+                            {project.highlights.map((h, hIdx) => (
+                              <li key={hIdx} className="flex items-start gap-2.5 text-xs leading-relaxed text-fog/90">
+                                <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-amber shadow-[0_0_8px_rgba(255,77,90,0.6)]" />
+                                <span>{h}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
                         <ul className="mt-6 flex flex-wrap gap-2">
                           {project.stack.map((chip) => (
                             <li

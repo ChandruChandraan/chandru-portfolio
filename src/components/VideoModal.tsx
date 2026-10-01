@@ -132,7 +132,7 @@ export default function VideoModal({ video, onClose }: Props) {
 
         <div className="relative aspect-video w-full bg-black">
           <iframe
-            src={`https://www.youtube-nocookie.com/embed/${video.videoId}?autoplay=1&controls=0&mute=0&rel=0&modestbranding=1&disablekb=1&fs=0&iv_load_policy=3&playsinline=1`}
+            src={`https://www.youtube-nocookie.com/embed/${video.videoId}?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&disablekb=1&fs=0&iv_load_policy=3&playsinline=1`}
             title={`${video.title} — YouTube video`}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen

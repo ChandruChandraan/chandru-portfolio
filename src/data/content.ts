@@ -125,6 +125,7 @@ export type Project = {
   title: string;
   tag: string;
   desc: string;
+  highlights?: string[];
   stack: string[];
   image: string;
   imageAlt: string;
@@ -137,7 +138,12 @@ export const projects: Project[] = [
     n: "01",
     title: "DEO VISION – DICOM VIEWER",
     tag: "VR // MEDICAL 3D VOLUMETRIC RECONSTRUCTION",
-    desc: "Medical visualization application focused on viewing and interacting with DICOM medical imaging data.",
+    desc: "Advanced medical visualization application built with Unreal Engine, engineered for streaming, 3D volumetric reconstruction, and interactive spatial analysis of clinical DICOM CT/MRI datasets.",
+    highlights: [
+      "Volumetric 3D reconstruction with real-time transfer function density shaders",
+      "Multi-Planar Reconstruction (MPR) with synchronized axial, coronal, and sagittal viewports",
+      "VR & desktop interaction with 3D biometric measurement calipers and density thresholding",
+    ],
     stack: [
       "UNREAL ENGINE",
       "DICOM 3D DATA",
@@ -154,7 +160,12 @@ export const projects: Project[] = [
     n: "02",
     title: "D-TILER",
     tag: "VISUALIZATION // APPLICATION PORTFOLIO",
-    desc: "Visualization-focused application developed within the Deo Verse professional application portfolio.",
+    desc: "Real-time architectural surface and material customizer application in Unreal Engine 5, enabling interactive visualization of flooring, tiling patterns, and photorealistic interior finishes.",
+    highlights: [
+      "Interactive material selector with real-time PBR roughness and reflectivity controls",
+      "Dynamic procedural grid layout configuration (herringbone, chevron, grid, offset)",
+      "Unreal Engine 5 Lumen ray-traced reflections and real-time indirect lighting",
+    ],
     stack: [
       "UNREAL ENGINE",
       "VISUALIZATION",
@@ -171,7 +182,12 @@ export const projects: Project[] = [
     n: "03",
     title: "DEOVERSE SIMULATOR",
     tag: "SIMULATION // REAL-TIME 3D & IMMERSIVE",
-    desc: "Simulation application involving real-time 3D environments, interaction, and immersive experiences.",
+    desc: "Comprehensive real-time 3D simulation platform developed for virtual reality training, digital-twin mechanical diagnostics, and physics-driven spatial interactions.",
+    highlights: [
+      "Physics-based interaction mechanics and 6-DOF spatial VR controller controls",
+      "Real-time collision matrix solver and telemetry diagnostic HUD overlay",
+      "Optimized multi-threaded level architecture and Blueprint system workflows",
+    ],
     stack: [
       "UNREAL ENGINE",
       "SIMULATION SYSTEMS",
@@ -188,7 +204,12 @@ export const projects: Project[] = [
     n: "04",
     title: "DHAKSHA",
     tag: "INTERACTIVE TECH // PROFESSIONAL APPLICATION",
-    desc: "Interactive technology application developed within the Deo Verse professional environment.",
+    desc: "High-fidelity industrial multirotor drone and UAV flight simulation in Unreal Engine 5, integrating authentic flight physics controls, spatial waypoints, and telemetry systems.",
+    highlights: [
+      "Flight dynamics physics simulation with responsive rotor thrust and aerodynamics",
+      "Full pilot HUD telemetry (artificial horizon, GPS coordinates, battery voltage, altimeter)",
+      "Picture-in-picture thermal infrared camera feed and automated waypoint flight routes",
+    ],
     stack: [
       "UNREAL ENGINE",
       "PHYSICS CONTROLS",
@@ -205,7 +226,12 @@ export const projects: Project[] = [
     n: "05",
     title: "ANATOMY",
     tag: "VR // MEDICAL & ANATOMICAL VISUALIZATION",
-    desc: "Medical and anatomical visualization application focused on interactive 3D visualization.",
+    desc: "Interactive VR medical and anatomical visualization application designed for immersive spatial training, featuring high-resolution 3D cardiovascular and organ models.",
+    highlights: [
+      "Translucent volumetric 3D human anatomy model with glowing vascular circulatory maps",
+      "Real-time biometric telemetry HUD tracking heart rate, blood pressure, and oxygen saturation",
+      "Interactive 3D spatial slicing planes and cross-sectional organ diagnostics",
+    ],
     stack: [
       "UNREAL ENGINE",
       "VR ANATOMY",
@@ -215,13 +241,19 @@ export const projects: Project[] = [
     ],
     image: "images/vr-anatomy.jpg",
     imageAlt: "Anatomy interactive 3D medical visualization",
+    videoId: "HNVgJfvbqTQ",
     sub: "MEDICAL & ANATOMICAL VISUALIZATION",
   },
   {
     n: "06",
     title: "DEO + MED + DEFENCE",
     tag: "SPECIALIZED WORKSTREAM // REAL-TIME TECH",
-    desc: "Professional application/workstream involving real-time visualization and interactive technology for specialized use cases.",
+    desc: "Specialized defense combat medicine and emergency tactical triage simulation engineered for field medics operating in high-stress tactical environments.",
+    highlights: [
+      "Tactical triage AR overlay displaying casualty status, trauma indicators, and vital trends",
+      "Hemorrhage control CAT tourniquet pressure diagnostic feedback and stabilization window",
+      "Immersive military operations base and armored transport simulation environment in UE5",
+    ],
     stack: [
       "UNREAL ENGINE",
       "REAL-TIME VISUALIZATION",
@@ -233,6 +265,28 @@ export const projects: Project[] = [
     imageAlt: "Deo + Med + Defence specialized real-time visualization workstream",
     videoId: "HyKbepj3pls",
     sub: "SPECIALIZED INTERACTIVE WORKSTREAM",
+  },
+  {
+    n: "07",
+    title: "SWARNABHOOMI 3D WALKTHROUGH",
+    tag: "ARCHVIZ // PC & VR REAL-TIME WALKTHROUGH",
+    desc: "Photorealistic real-time architectural visualization application for luxury residential estates, built in Unreal Engine 5 for interactive PC and VR walkthroughs.",
+    highlights: [
+      "Unreal Engine 5 Lumen global illumination and dynamic day/dusk atmospheric lighting",
+      "Interactive spatial teleportation and free-roam architectural exploration",
+      "High-fidelity PBR architectural materials, water shaders, and lush foliage level design",
+    ],
+    stack: [
+      "UNREAL ENGINE 5",
+      "LUMEN LIGHTING",
+      "ARCHITECTURAL VISUALIZATION",
+      "VR WALKTHROUGH",
+      "LEVEL DESIGN",
+    ],
+    image: "images/archviz-walkthrough.jpg",
+    imageAlt: "Swarnabhoomi 3D Walkthrough real-time architectural visualization in Unreal Engine 5",
+    videoId: "JUrkHQlcbRo",
+    sub: "REAL-TIME ARCHITECTURAL VISUALIZATION",
   },
 ];
 
@@ -247,7 +301,7 @@ export type WorkItem = {
   tall?: boolean;
 };
 
-/* Verified project demo videos matching the 6 professional projects */
+/* Verified project demo videos matching the 7 professional projects */
 export const selectedWork: WorkItem[] = [
   {
     n: "01",
@@ -288,21 +342,30 @@ export const selectedWork: WorkItem[] = [
   },
   {
     n: "05",
+    title: "ANATOMY",
+    sub: "VR ANATOMICAL VISUALIZATION",
+    videoId: "HNVgJfvbqTQ",
+    image: "images/vr-anatomy.jpg",
+    span: "lg:col-span-6",
+    aspect: "aspect-[16/10]",
+  },
+  {
+    n: "06",
     title: "DEO + MED + DEFENCE",
     sub: "REAL-TIME VISUALIZATION & INTERACTION",
     videoId: "HyKbepj3pls",
     image: "images/deo-med-defence.jpg",
-    span: "md:col-span-2 lg:col-span-7",
-    aspect: "aspect-[16/9]",
+    span: "lg:col-span-6",
+    aspect: "aspect-[16/10]",
   },
   {
-    n: "06",
+    n: "07",
     title: "SWARNABHOOMI 3D WALKTHROUGH",
     sub: "REAL-TIME ARCHITECTURAL VISUALIZATION",
     videoId: "JUrkHQlcbRo",
     image: "images/archviz-walkthrough.jpg",
-    span: "lg:col-span-5",
-    aspect: "aspect-[16/9]",
+    span: "md:col-span-2 lg:col-span-12",
+    aspect: "aspect-[16/9] lg:aspect-[21/8]",
   },
 ];
 
