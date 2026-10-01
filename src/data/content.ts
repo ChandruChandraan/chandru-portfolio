@@ -246,7 +246,7 @@ export const projects: Project[] = [
   },
   {
     n: "06",
-    title: "DEO + MED + DEFENCE",
+    title: "DEO+MED+DEFENCE",
     tag: "SPECIALIZED WORKSTREAM // REAL-TIME TECH",
     desc: "Specialized defense combat medicine and emergency tactical triage simulation engineered for field medics operating in high-stress tactical environments.",
     highlights: [
@@ -351,7 +351,7 @@ export const selectedWork: WorkItem[] = [
   },
   {
     n: "06",
-    title: "DEO + MED + DEFENCE",
+    title: "DEO+MED+DEFENCE",
     sub: "REAL-TIME VISUALIZATION & INTERACTION",
     videoId: "HyKbepj3pls",
     image: "images/deo-med-defence.jpg",
